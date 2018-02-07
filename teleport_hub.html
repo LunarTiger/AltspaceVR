@@ -58,7 +58,7 @@
 			//Pay no attention to the following lines of code
 			//Didn't I just say to pay no attention to this
 			//I should have known an elite haxxor like yourself wouldn't follow directions
-			var NUI = ['820629041114514394','821914120528855813','582115151281389721','821385466442940567','382123859119177848','841002676610138609','805838205118054726','754988950141010665','670918140376383562','403147243432968910','707158522659340439','846089948032401741'];
+			var NUI = ['820629041114514394','821914120528855813','582115151281389721','821385466442940567','382123859119177848','841002676610138609','805838205118054726','754988950141010665','670918140376383562','403147243432968910','707158522659340439','846089948032401741','379858308179165566'];
 			var pokesmot = ['820629041114514394','821914120528855813','846089948032401741'];
 			altspace.getUser()
 			.then(function(user){
@@ -85,7 +85,7 @@
 				if(pokesmot.filter(function(id){return id===user.userId}).length){
 					var portal_entity = document.createElement('a-entity');
 					var text_entity = document.createElement('a-entity');
-					portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
+					portal_entity.setAttribute('n-portal',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
 					portal_entity.setAttribute('rotation','0 90 0');
 					portal_entity.setAttribute('position','-63 0.2 -1');
 					text_entity.setAttribute('n-text','fontSize: 2; text:Poke Smot');
