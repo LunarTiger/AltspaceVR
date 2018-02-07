@@ -20,3 +20,31 @@
 		</ul>
 	</li>
 </ul>
+
+<ul>
+  <li>level 1 item
+    <ul>
+      <li>level 2 item</li>
+      <li>level 2 item
+        <ul>
+          <li>level 3 item</li>
+          <li>level 3 item</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>level 1 item
+    <ul>
+      <li>level 2 item</li>
+      <li>level 2 item</li>
+      <li>level 2 item</li>
+    </ul>
+  </li>
+  <li>level 1 item
+    <ul>
+      <li>level 2 item</li>
+      <li>level 2 item</li>
+    </ul>
+  </li>
+  <li>level 1 item</li>
+</ul>
