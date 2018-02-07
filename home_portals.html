@@ -10,8 +10,6 @@
 		<script src="https://sdk.altvr.com/libs/altspace.js/2.7.4/altspace.min.js"></script>
 	</head>
 	<body>
-		<!-- Starting the scene, defining the space to be a fullspace app-->
-		<!--<a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">-->
 		<!-- Starting the scene, defining the alignment of the scene to the bottom of the boundary box-->
 		<a-scene altspace='vertical-align: bottom'>
 			<!--Asset Loading-->
@@ -29,7 +27,6 @@
 			<a-entity n-text="fontSize: 2; text:My Teleport Hub" position="6.5 1 -2" rotation='0 -90 0' visible></a-entity>
 			<!--Make another boundary box and load event portals-->
 			<a-entity position="6.5 0.4 6" rotation="0 -90 0" n-layout-browser="url:http://altspacevr.github.io/event-portals-app/;isEnclosure:true;"></a-entity>
-			<!--Ending the scene--> 
 		</a-scene>
 		<script type="text/javascript">
 			altspace.getUser()
