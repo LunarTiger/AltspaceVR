@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Home Portals</title>
+		<meta name="Home Portals" content="Home Portals">
+		<!--Calling on aframes JS-->
+		<script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+		<!--Calling on the Altspace SDK js-->
+		<script src="https://sdk.altvr.com/libs/altspace.js/2.7.4/altspace.min.js"></script>
+	</head>
+	<body>
+		<!-- Starting the scene, defining the space to be a fullspace app-->
+		<!--<a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">-->
+		<!-- Starting the scene, defining the alignment of the scene to the bottom of the boundary box-->
+		<a-scene altspace='vertical-align: bottom'>
+			<!--Asset Loading-->
+			<!--<a-assets> 
+			</a-assets>-->
+			<!--Load portals-->
+			<!--New User Info-->
+			<a-entity position='6.5 0.5 -6' rotation='0 -90 0' n-portal='targetSpace: new-user-info'></a-entity>
+			<a-entity n-text="fontSize: 2; text:New User Info" position="6.5 1 -6" rotation='0 -90 0' visible></a-entity>
+			<!--Campfire-->
+			<a-entity position='6.5 0.5 -4' rotation='0 -90 0' n-portal='targetSpace: campfire-lobby'></a-entity>
+			<a-entity n-text="fontSize: 2; text:Campfire" position="6.5 1 -4" rotation='0 -90 0' visible></a-entity>
+			<!--Lunar's Teleport Hub-->
+			<a-entity position='6.5 0.5 -2' rotation='0 -90 0' n-portal='targetSpace: lunar-s-teleport-hub'></a-entity>
+			<a-entity n-text="fontSize: 2; text:My Teleport Hub" position="6.5 1 -2" rotation='0 -90 0' visible></a-entity>
+			<!--Make another boundary box and load event portals-->
+			<a-entity position="6.5 0.4 6" rotation="0 -90 0" n-layout-browser="url:http://altspacevr.github.io/event-portals-app/;isEnclosure:true;"></a-entity>
+			<!--Ending the scene--> 
+		</a-scene>
+		<script type="text/javascript">
+			altspace.getUser()
+			.then(function(user){
+				//console.log('The user id:',user.userId);
+				var pokesmot = ['820629041114514394','821914120528855813','846089948032401741'];
+				if(pokesmot.filter(function(id){return id===user.userId}).length){
+					var portal_entity = document.createElement('a-entity');
+					var text_entity = document.createElement('a-entity');
+					portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
+					portal_entity.setAttribute('rotation','0 90 0');
+					portal_entity.setAttribute('position','6.5 0.5 15.5');
+					text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
+					text_entity.setAttribute('rotation','0 90 0');
+					text_entity.setAttribute('position','6.5 1 15.5');
+					document.querySelector('a-scene').appendChild(portal_entity);
+					document.querySelector('a-scene').appendChild(text_entity);
+				}
+			})
+		</script>
+	</body>
+</html>
