@@ -1,4 +1,4 @@
-<!--<ul>
+<ul>
   <li><h3>Campfire Master<h3>
     <ul>
       <li><a href="https://lunartiger.github.io/AltspaceVR/campfire_master.html">https://lunartiger.github.io/AltspaceVR/campfire_master.html</a></li>
@@ -19,20 +19,19 @@
   		<li><a href="https://lunartiger.github.io/AltspaceVR/teleport_hub_portal.html">https://lunartiger.github.io/AltspaceVR/teleport_hub_portal.html</a></li>
 		</ul>
 	</li>
-</ul>
+<!--<ul>
+  <li><h3>Campfire Master<h3>
+    <ul>
+      <li>level 2 item</li>
+    </ul>
+  </li>
+  <li>level 1 item
+    <ul>
+      <li>level 2 item</li>
+    </ul>
+  </li>
+  <li>level 1 item
+    <ul>
+      <li>level 2 item</li>
+    </ul>
 -->
-<ul>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-    </ul>
