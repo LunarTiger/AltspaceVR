@@ -10,12 +10,13 @@
 		<script src="https://sdk.altvr.com/libs/altspace.js/2.7.4/altspace.min.js"></script>
 	</head>
 	<body>
-    <a-scene altspace='vertical-align: top'></a-scene>
+		<a-scene altspace='vertical-align: top'></a-scene>
 		<script type="text/javascript">
-		altspace.getUser()
+			altspace.getUser()
+			var cansee = ['820629041114514394','821914120528855813','846089948032401741'];
 			.then(function(user){
-			//console.log('The user id:',user.userId);
-				if(user.userId==="820629041114514394" || user.userId==="821914120528855813"){
+				//console.log('The user id:',user.userId);
+				if(cansee.filter(function(id){return id===user.userId}).length){
 					var portal_entity = document.createElement('a-entity');
 					portal_entity.setAttribute('n-portal','targetSpace: lunar-s-teleport-hub');
 					portal_entity.setAttribute('rotation','0 0 0');
