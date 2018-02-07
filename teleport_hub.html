@@ -85,10 +85,10 @@
 				if(pokesmot.filter(function(id){return id===user.userId}).length){
 					var portal_entity = document.createElement('a-entity');
 					var text_entity = document.createElement('a-entity');
-					portal_entity.setAttribute('n-portal',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
+					portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
 					portal_entity.setAttribute('rotation','0 90 0');
 					portal_entity.setAttribute('position','-63 0.2 -1');
-					text_entity.setAttribute('n-text','fontSize: 2; text:Poke Smot');
+					text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
 					text_entity.setAttribute('rotation','0 90 0');
 					text_entity.setAttribute('position','-63 0.7 -1');
 					document.querySelector('a-scene').appendChild(portal_entity);
