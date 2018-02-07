@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Lunar's Teleport Hub Portal for Capt Cannibis</title>
+		<meta name="Lunar's Teleport Hub Portal for Capt Cannibis" content="Lunar's Teleport Hub Portal for Capt Cannibis">
+		<!--Calling on aframes JS-->
+		<script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+		<!--Calling on the Altspace SDK js-->
+		<script src="https://sdk.altvr.com/libs/altspace.js/2.7.4/altspace.min.js"></script>
+	</head>
+	<body>
+    <a-scene altspace='vertical-align: top'></a-scene>
+		<script type="text/javascript">
+		altspace.getUser()
+			.then(function(user){
+			//console.log('The user id:',user.userId);
+				if(user.userId==="820629041114514394" || user.userId==="821914120528855813"){
+					var portal_entity = document.createElement('a-entity');
+					portal_entity.setAttribute('n-portal','targetSpace: lunar-s-teleport-hub');
+					portal_entity.setAttribute('rotation','0 0 0');
+					portal_entity.setAttribute('position','0 0 0');
+					var text_entity = document.createElement('a-entity');
+					text_entity.setAttribute('n-text',"fontSize: 2; text:Lunar's<br>Teleport Hub");
+					text_entity.setAttribute('rotation','0 0 0');
+					text_entity.setAttribute('position','0 0.7 0');
+					document.querySelector('a-scene').appendChild(portal_entity);
+					document.querySelector('a-scene').appendChild(text_entity);
+				}
+			})
+		</script>
+	</body>
+</html>
