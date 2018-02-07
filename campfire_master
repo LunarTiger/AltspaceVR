@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Campfire Master</title>
+		<meta name="Campfire Master" content="Campfire Master">
+		<!--Calling on aframes JS-->
+		<script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+		<!--Calling on the Altspace SDK js-->
+		<script src="https://sdk.altvr.com/libs/altspace.js/2.7.4/altspace.min.js"></script>
+	</head>
+	<body>
+		<!-- Starting the scene, defining the alignment of the scene to the middle of the boundary box and be a full space app-->
+		<a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">
+			<!--Make another boundary box and load teleport hub portal-->
+			<a-entity position="32.5 1 33" rotation="0 180 0" scale="0.1 0.1 0.1" n-layout-browser="url:http://output.jsbin.com/divufan;isEnclosure:true;"></a-entity>
+			<!--Make another boundary box and load Scene-->
+			<!--<a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:http://marchecity.com:8081/;isEnclosure:true;"></a-entity>
+			<!--Make another boundary box and load friend maker 5000-->
+			<!--<a-entity position="3.5 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://altspacevr.github.io/icebreaker-app/;isEnclosure:true;"></a-entity>
+			<!--Make another boundary box and load Video Jukebox-->
+			<a-entity position="3.5 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:http://video-jukebox.firebaseapp.com/;isEnclosure:true;"></a-entity>
+			<!--Make another boundary box and load HaH-->
+			<!--<a-entity position="3.5 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://hah.altvr.com/play?gameId=fkSbYiL1uokLRrhY;isEnclosure:true;"></a-entity>
+			<!--Make another boundary box and load tiny HaH-->
+			<!--<a-entity position="0 -2.7 0" rotation="0 0 0" scale="1 0.2 1" n-layout-browser="url:https://hah.altvr.com/play?gameId=fkSbYiL1uokLRrhY;isEnclosure:true;"></a-entity>
+			<!--Ending the scene--> 
+		</a-scene>
+	</body>
+</html>
