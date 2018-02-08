@@ -1,4 +1,4 @@
-<ul>
+<p>
 	<h3>Campfire Master</h3>
 		<ul><li><a href="https://lunartiger.github.io/AltspaceVR/campfire_master.html">https://lunartiger.github.io/AltspaceVR/campfire_master.html</a></li></ul>
 	<h3>Home Portals</h3>
@@ -10,4 +10,4 @@
 	<br><br><br><br><br>
 	<hr />
 	<a href="https://lunartiger.github.io/home/">Home</a>
-</ul>
+</p>
