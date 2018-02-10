@@ -49,10 +49,10 @@
 					text_entity.setAttribute('position','6.5 1 15.5');
 					document.querySelector('a-scene').appendChild(portal_entity);
 					document.querySelector('a-scene').appendChild(text_entity);
-					var sim = new altspace.utilities.Simulation();
-					altspace.getEnclosure(function(enclosure){sim.scene.scale.set(enclosure.pixelsPerMeter,enclosure.pixelsPerMeter,enclosure.pixelsPerMeter)});
 				}
 			})
+			var sim = new altspace.utilities.Simulation();
+			altspace.getEnclosure(function(enclosure){sim.scene.scale.set(enclosure.pixelsPerMeter,enclosure.pixelsPerMeter,enclosure.pixelsPerMeter)});
 		</script>
 	</body>
 </html>
