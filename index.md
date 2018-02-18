@@ -2,7 +2,7 @@
 	<h3>Campfire Master</h3>
 		<ul>
 			<li><a href="https://lunartiger.github.io/AltspaceVR/campfire_master.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/campfire_master.html</a></li>
-			<small><br></small>
+			<hr style="height:1px; visibility:hidden;" />
 			<li><a href="https://github.com/LunarTiger/AltspaceVR/blob/master/campfire_master.html">View Source</a></li>
 			</ul>
 	<h3>Home Portals</h3>
