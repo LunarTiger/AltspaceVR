@@ -19,7 +19,4 @@
 			<li>App: <a href="https://lunartiger.github.io/AltspaceVR/teleport_hub_portal.html">https://lunartiger.github.io/AltspaceVR/teleport_hub_portal.html</a></li>
 			<li><a href="https://github.com/LunarTiger/AltspaceVR/blob/master/teleport_hub_portal.html">View Source</a></li>
 		</ul>
-	<br><br><br><br><br>
-	<hr />
-	<a href="https://lunartiger.github.io/home/">Home</a>
 </p>
