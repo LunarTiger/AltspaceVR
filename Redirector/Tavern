@@ -7,8 +7,8 @@
 			table {margin-left:auto;margin-right:auto;}
 		</style>
 		<meta charset="UTF-8">
-		<title>Tavern Redirection</title>
-		<meta name="Tavern Redirection" content="Tavern Redirection">
+		<title>Tavern Redirector</title>
+		<meta name="Tavern Redirector" content="Tavern Redirector">
 	</head>
 	<body>
 		<button type="button" style="visibility:hidden;"></button><br><br>
