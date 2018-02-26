@@ -1,0 +1,117 @@
+<html>
+<head>
+  <title>Badges</title>
+  <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+  <script src="https://sdk.altvr.com/libs/altspace.js/2.4.0/altspace.min.js"></script>
+</head>
+<body>
+<a-scene altspace='fullspace: true' sync-system='author: BenG; app: devBadge; refUrl: https://altvr-apps.firebaseio.com/'>
+  <a-assets>
+    <img id='devb' src='https://bengarfield.github.io/AltVR/badges/devb.png'>
+    <img id='creatorb' src='https://bengarfield.github.io/AltVR/badges/creatorb.png'>
+    <img id='adminb' src='https://bengarfield.github.io/AltVR/badges/adminb.png'>
+    <img id='badgeb' src='https://bengarfield.github.io/AltVR/badges/badge.png'>
+    
+    <a-mixin id='creatorbadge' geometry='primitive: circle; radius: 0.04' material='src: #creatorb' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='devbadge' geometry='primitive: circle; radius: 0.04' material='src: #devb' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='adminbadge' geometry='primitive: circle; radius: 0.04' material='src: #adminb' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='asshole' n-text='fontSize: 5;text: Asshole' position='0 1 0' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    
+    <a-mixin id='badge' geometry='primitive: circle; radius: .038' material='src: #badgeb; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='ring' geometry='primitive: ring; radius-outer: .04; radius-inner: .038' material='color: black; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    
+    <a-mixin id='blue' material='color: blue; side: double'></a-mixin>
+    <a-mixin id='red' material='color: red; side: double'></a-mixin>
+    <a-mixin id='gold' material='color: #ffbf00; side: double'></a-mixin>
+    <a-mixin id='pink' material='color: #e512c9; side: double'></a-mixin>
+    
+    <a-mixin id='creatortext' n-text='fontSize: 1; text: <color=black>I built\nthis place' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='devtext' n-text='fontSize: 1; text: <color=black>I am a\ndeveloper' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='admintext' n-text='fontSize: 1; text: <color=black>I work\nhere' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='assholetext' n-text='fontSize: 1; text: <color=black>I am an\nasshole' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='vivtext' n-text='fontSize: 1; text: <color=black>I am a\nVivian' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='oddtext' n-text='fontSize: 1; text: <color=black>I am an\nOddity' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+  </a-assets>
+  
+  <!-- <a-entity position='-1 2.7 0' geometry='primitive: circle; radius: 0.04' material='src: #creatorb'></a-entity>
+  <a-circle position='-.9 2.7 0' radius='0.038' src='#badgeb' side='double'></a-circle>
+  <a-entity position='-.9 2.7 .001' scale='.15 .15 .15' n-text='fontSize: 1; text: <color=black>I built\nthis place'></a-entity>
+  <a-ring position='-.9 2.7 0' radius-outer='0.04' radius-inner='0.038' color='blue' side='double'></a-ring>
+  
+  <a-entity position='-1 2.6 0' geometry='primitive: circle; radius: 0.04' material='src: #devb'></a-entity>
+  <a-circle position='-.9 2.6 0' radius='0.038' src='#badgeb' side='double'></a-circle>
+  <a-entity position='-.9 2.6 .001' scale='.15 .15 .15' n-text='fontSize: 1; text: <color=black>I am a\ndeveloper'></a-entity>
+  <a-ring position='-.9 2.6 0' radius-outer='0.04' radius-inner='0.038' color='black' side='double'></a-ring>
+  
+  <a-entity position='-1 2.5 0' geometry='primitive: circle; radius: 0.04' material='src: #adminb'></a-entity>
+  <a-circle position='-.9 2.5 0' radius='0.038' src='#badgeb' side='double'></a-circle>
+  <a-entity position='-.9 2.5 .001' scale='.15 .15 .15' n-text='fontSize: 1; text: <color=black>I work\nhere'></a-entity>
+  <a-ring position='-.9 2.5 0' radius-outer='0.04' radius-inner='0.038' color='#ffbf00' side='double'></a-ring>
+  
+  <a-circle position='-.9 2.4 0' radius='0.038' src='#badgeb' side='double'></a-circle>
+  <a-entity position='-.9 2.4 .001' scale='.15 .15 .15' n-text='fontSize: 1; text: <color=black>I am an\nasshole'></a-entity>
+  <a-ring position='-.9 2.4 0' radius-outer='0.04' radius-inner='0.038' color='black' side='double'></a-ring>
+  
+  <a-circle position='-.9 2.3 0' radius='0.038' src='#badgeb' side='double'></a-circle>
+  <a-entity position='-.9 2.3 .001' scale='.15 .15 .15' n-text='fontSize: 1; text: <color=black>I am an\nOddity'></a-entity>
+  <a-ring position='-.9 2.3 0' radius-outer='0.04' radius-inner='0.038' color='#e512c9' side='double'></a-ring> -->
+  
+</a-scene>
+<script>
+  var creator = 'beng313';
+  var scene = document.querySelector('a-scene');
+  scene.addEventListener('connected', function() {
+    altspace.getUser().then(function(user){
+      var dataRequest = (THREE.FileLoader ? new THREE.FileLoader() : new THREE.XHRLoader(/* DEPRECATED: r83 */));
+      dataRequest.setWithCredentials(true);
+      dataRequest.load('https://account.altvr.com/api/v1/users/' + user.userId, onLoaded, undefined, undefined);
+      function onLoaded(obj) {
+        //console.log(obj);
+        var roles = JSON.parse(obj).users[0].roles;
+        var name = JSON.parse(obj).users[0].username;
+        console.log(roles);
+        if (user.displayName == 'FACEMAN' || user.displayName == 'Auzrea') {
+          scene.systems['sync-system'].instantiate('asshole', scene);
+          scene.systems['sync-system'].instantiate('badge', scene);
+          scene.systems['sync-system'].instantiate('ring', scene);
+          scene.systems['sync-system'].instantiate('assholetext', scene);
+        } else if (user.displayName == 'Vivian') {
+          scene.systems['sync-system'].instantiate('badge', scene);
+          scene.systems['sync-system'].instantiate('ring red', scene);
+          scene.systems['sync-system'].instantiate('vivtext', scene);
+        } else if (user.displayName == 'Oddity') {
+          scene.systems['sync-system'].instantiate('badge', scene);
+          scene.systems['sync-system'].instantiate('ring pink', scene);
+          scene.systems['sync-system'].instantiate('oddtext', scene);
+        } else if (name == creator){
+          console.log('You built this place');
+          instantiateDevBadge('creator');
+        } else if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
+          console.log('You are an admin');
+          instantiateDevBadge('admin');
+        } else if (roles.indexOf('developer') != -1){
+          console.log('You are a developer');
+          instantiateDevBadge('dev');
+        } else {
+          console.log('You are not a developer');
+        }
+      }
+      function instantiateDevBadge(type) {
+        scene.systems['sync-system'].instantiate('badge', scene);
+        if (type == 'creator') {
+          //scene.systems['sync-system'].instantiate('handball', scene);
+          scene.systems['sync-system'].instantiate('ring blue', scene);
+          scene.systems['sync-system'].instantiate('creatortext', scene);
+        } else if (type == 'admin') {
+          scene.systems['sync-system'].instantiate('ring gold', scene);
+          scene.systems['sync-system'].instantiate('admintext', scene);
+        } else if (type == 'dev') {
+          scene.systems['sync-system'].instantiate('ring', scene);
+          scene.systems['sync-system'].instantiate('devtext', scene);
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
