@@ -68,37 +68,46 @@
 			var pokesmot = ['820629041114514394','821914120528855813','846089948032401741'];
 			altspace.getUser()
 			.then(function(user){
-				//console.log('The user id:',user.userId);
-				if(NUI.filter(function(id){return id===user.userId}).length || pokesmot.filter(function(id){return id===user.userId}).length){
-					var text_entity = document.createElement('a-entity');
-					text_entity.setAttribute('n-text','fontSize: 10; text:Hidden Portals');
-					text_entity.setAttribute('rotation','0 90 0');
-					text_entity.setAttribute('position','-63 5 0');
-					document.querySelector('a-scene').appendChild(text_entity);
-				}
-				if(NUI.filter(function(id){return id===user.userId}).length){
-					var portal_entity = document.createElement('a-entity');
-					var text_entity = document.createElement('a-entity');
-					portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
-					portal_entity.setAttribute('rotation','0 90 0');
-					portal_entity.setAttribute('position','-63 0.2 1');
-					text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
-					text_entity.setAttribute('rotation','0 90 0');
-					text_entity.setAttribute('position','-63 0.7 1');
-					document.querySelector('a-scene').appendChild(portal_entity);
-					document.querySelector('a-scene').appendChild(text_entity);
-				}
-				if(pokesmot.filter(function(id){return id===user.userId}).length){
-					var portal_entity = document.createElement('a-entity');
-					var text_entity = document.createElement('a-entity');
-					portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
-					portal_entity.setAttribute('rotation','0 90 0');
-					portal_entity.setAttribute('position','-63 0.2 -1');
-					text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
-					text_entity.setAttribute('rotation','0 90 0');
-					text_entity.setAttribute('position','-63 0.7 -1');
-					document.querySelector('a-scene').appendChild(portal_entity);
-					document.querySelector('a-scene').appendChild(text_entity);
+				var dataRequest = (THREE.FileLoader ? new THREE.FileLoader() : new THREE.XHRLoader(/* DEPRECATED: r83 */));
+				dataRequest.setWithCredentials(true);
+				dataRequest.load('https://account.altvr.com/api/v1/users/' + user.userId, onLoaded, undefined, undefined);
+				function onLoaded(obj) {
+					var isAdmin = false;
+					var roles = JSON.parse(obj).users[0].roles;
+					var name = JSON.parse(obj).users[0].username;
+					//console.log('The user id:',user.userId);
+					if(roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){isAdmin = true;}
+					if(NUI.filter(function(id){return id===user.userId}).length || pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
+						var text_entity = document.createElement('a-entity');
+						text_entity.setAttribute('n-text','fontSize: 10; text:Hidden Portals');
+						text_entity.setAttribute('rotation','0 90 0');
+						text_entity.setAttribute('position','-63 5 0');
+						document.querySelector('a-scene').appendChild(text_entity);
+					}
+					if(NUI.filter(function(id){return id===user.userId}).length || isAdmin){
+						var portal_entity = document.createElement('a-entity');
+						var text_entity = document.createElement('a-entity');
+						portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
+						portal_entity.setAttribute('rotation','0 90 0');
+						portal_entity.setAttribute('position','-63 0.2 1');
+						text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
+						text_entity.setAttribute('rotation','0 90 0');
+						text_entity.setAttribute('position','-63 0.7 1');
+						document.querySelector('a-scene').appendChild(portal_entity);
+						document.querySelector('a-scene').appendChild(text_entity);
+					}
+					if(pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
+						var portal_entity = document.createElement('a-entity');
+						var text_entity = document.createElement('a-entity');
+						portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
+						portal_entity.setAttribute('rotation','0 90 0');
+						portal_entity.setAttribute('position','-63 0.2 -1');
+						text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
+						text_entity.setAttribute('rotation','0 90 0');
+						text_entity.setAttribute('position','-63 0.7 -1');
+						document.querySelector('a-scene').appendChild(portal_entity);
+						document.querySelector('a-scene').appendChild(text_entity);
+					}
 				}
 			})
 		</script>
