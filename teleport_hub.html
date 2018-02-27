@@ -77,9 +77,9 @@
 				dataRequest.setWithCredentials(true);
 				dataRequest.load('https://account.altvr.com/api/v1/users/' + user.userId, onLoaded, undefined, undefined);
 				function onLoaded(obj) {
-					var isAdmin = false;
 					var roles = JSON.parse(obj).users[0].roles;
 					var name = JSON.parse(obj).users[0].username;
+					var isAdmin = false;
 					//console.log('The user id:',user.userId);
 					if(roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){isAdmin = true;}
 					if(NUI.filter(function(id){return id===user.userId}).length || pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
