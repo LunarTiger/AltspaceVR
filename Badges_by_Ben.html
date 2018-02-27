@@ -70,7 +70,7 @@
         var roles = JSON.parse(obj).users[0].roles;
         var name = JSON.parse(obj).users[0].username;
         console.log(roles);
-        if (user.displayName == 'FACEMAN' || user.displayName == 'Auzrea') {
+        /*if (user.displayName == 'FACEMAN' || user.displayName == 'Auzrea') {
           scene.systems['sync-system'].instantiate('asshole', scene);
           scene.systems['sync-system'].instantiate('badge', scene);
           scene.systems['sync-system'].instantiate('ring', scene);
@@ -86,7 +86,7 @@
         } else if (name == creator){
           console.log('You built this place');
           instantiateDevBadge('creator');
-        } else if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
+        } else */if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You are an admin');
           instantiateDevBadge('admin');
         } else if (roles.indexOf('developer') != -1){
