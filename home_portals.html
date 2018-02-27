@@ -17,6 +17,8 @@
 			<!--Asset Loading-->
 			<!--<a-assets> 
 			</a-assets>-->
+			<!--Make another boundary box and load badges-->
+			<a-entity n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Badges_by_Ben.html?altspace-sync-instance=-L6Ia-73jk5cP_QBLdxc;isEnclosure:true;"></a-entity>
 			<!--Load portals-->
 			<!--New User Info-->
 			<a-entity position='6.5 0.5 -8' rotation='0 -90 0' n-portal='targetSpace: new-user-info'></a-entity>
@@ -32,25 +34,32 @@
 			<a-entity n-text="fontSize: 2; text:My Teleport Hub" position="6.5 1 -2" rotation='0 -90 0' visible></a-entity>
 			<!--Make another boundary box and load event portals-->
 			<a-entity position="6.5 0.4 6" rotation="0 -90 0" n-layout-browser="url:http://altspacevr.github.io/event-portals-app/;isEnclosure:true;"></a-entity>
-			<!--Make another boundary box and load badges-->
-			<a-entity n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Badges_by_Ben.html?altspace-sync-instance=-L6Ia-73jk5cP_QBLdxc;isEnclosure:true;"></a-entity>
 		</a-scene>
 		<script type="text/javascript">
 			altspace.getUser()
 			.then(function(user){
+				var dataRequest = (THREE.FileLoader ? new THREE.FileLoader() : new THREE.XHRLoader(/* DEPRECATED: r83 */));
+				dataRequest.setWithCredentials(true);
+				dataRequest.load('https://account.altvr.com/api/v1/users/' + user.userId, onLoaded, undefined, undefined);
 				//console.log('The user id:',user.userId);
-				var pokesmot = ['820629041114514394','821914120528855813','846089948032401741'];
-				if(pokesmot.filter(function(id){return id===user.userId}).length){
-					var portal_entity = document.createElement('a-entity');
-					var text_entity = document.createElement('a-entity');
-					portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
-					portal_entity.setAttribute('rotation','0 90 0');
-					portal_entity.setAttribute('position','6.5 0.5 15.5');
-					text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
-					text_entity.setAttribute('rotation','0 90 0');
-					text_entity.setAttribute('position','6.5 1 15.5');
-					document.querySelector('a-scene').appendChild(portal_entity);
-					document.querySelector('a-scene').appendChild(text_entity);
+				function onLoaded(obj) {
+					var roles = JSON.parse(obj).users[0].roles;
+					var name = JSON.parse(obj).users[0].username;
+					var isAdmin = false;
+					var pokesmot = ['820629041114514394','821914120528855813','846089948032401741'];
+					if(roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){isAdmin = true;}
+					if(pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
+						var portal_entity = document.createElement('a-entity');
+						var text_entity = document.createElement('a-entity');
+						portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
+						portal_entity.setAttribute('rotation','0 90 0');
+						portal_entity.setAttribute('position','6.5 0.5 15.5');
+						text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
+						text_entity.setAttribute('rotation','0 90 0');
+						text_entity.setAttribute('position','6.5 1 15.5');
+						document.querySelector('a-scene').appendChild(portal_entity);
+						document.querySelector('a-scene').appendChild(text_entity);
+					}
 				}
 			})
 			var sim = new altspace.utilities.Simulation();
