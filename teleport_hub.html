@@ -94,7 +94,7 @@
 					if(NUI.filter(function(id){return id===user.userId}).length || pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
 						var text_entity = document.createElement('a-entity');
 						text_entity.setAttribute('n-text','fontSize: 10; text:Hidden Portals');
-						text_entity.setAttribute('rotation','0 90 0');
+						text_entity.setAttribute('rotation','0 -90 0');
 						text_entity.setAttribute('position','63 5 0');
 						document.querySelector('a-scene').appendChild(text_entity);
 					}
@@ -102,10 +102,10 @@
 						var portal_entity = document.createElement('a-entity');
 						var text_entity = document.createElement('a-entity');
 						portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
-						portal_entity.setAttribute('rotation','0 90 0');
+						portal_entity.setAttribute('rotation','0 -90 0');
 						portal_entity.setAttribute('position','63 0.2 1');
 						text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
-						text_entity.setAttribute('rotation','0 90 0');
+						text_entity.setAttribute('rotation','0 -90 0');
 						text_entity.setAttribute('position','63 0.7 1');
 						document.querySelector('a-scene').appendChild(portal_entity);
 						document.querySelector('a-scene').appendChild(text_entity);
@@ -114,10 +114,10 @@
 						var portal_entity = document.createElement('a-entity');
 						var text_entity = document.createElement('a-entity');
 						portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
-						portal_entity.setAttribute('rotation','0 90 0');
+						portal_entity.setAttribute('rotation','0 -90 0');
 						portal_entity.setAttribute('position','63 0.2 -1');
 						text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
-						text_entity.setAttribute('rotation','0 90 0');
+						text_entity.setAttribute('rotation','0 -90 0');
 						text_entity.setAttribute('position','63 0.7 -1');
 						document.querySelector('a-scene').appendChild(portal_entity);
 						document.querySelector('a-scene').appendChild(text_entity);
