@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>Badges</title>
-  <!-- Origional source:  https://jsbin.com/cetahe/edit?html -->
+  <!-- Original source:  https://jsbin.com/cetahe/edit?html -->
   <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
   <script src="https://sdk.altvr.com/libs/altspace.js/2.4.0/altspace.min.js"></script>
 </head>
@@ -25,6 +25,7 @@
     <a-mixin id='red' material='color: red; side: double'></a-mixin>
     <a-mixin id='gold' material='color: #ffbf00; side: double'></a-mixin>
     <a-mixin id='pink' material='color: #e512c9; side: double'></a-mixin>
+    <a-mixin id='green' material='color: #006900; side: double'></a-mixin>
     
     <a-mixin id='creatortext' n-text='fontSize: 1; text: <color=black>I built\nthis place' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='devtext' n-text='fontSize: 1; text: <color=black>I am a\ndeveloper' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
@@ -85,13 +86,12 @@
           scene.systems['sync-system'].instantiate('badge', scene);
           scene.systems['sync-system'].instantiate('ring pink', scene);
           scene.systems['sync-system'].instantiate('oddtext', scene);
-        }else */if (name == creator){
-          scene.systems['sync-system'].instantiate('badge', scene);
-          scene.systems['sync-system'].instantiate('ring gold', scene);
-          scene.systems['sync-system'].instantiate('devtext', scene);
+        } else */if (name == creator){
+          console.log('You made this script');
+          instantiateDevBadge('creator');
         } else if (name == owner){
           console.log('You built this place');
-          instantiateDevBadge('creator');
+          instantiateDevBadge('owner');
         } else if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You are an admin');
           instantiateDevBadge('admin');
@@ -105,8 +105,11 @@
       function instantiateDevBadge(type) {
         scene.systems['sync-system'].instantiate('badge', scene);
         if (type == 'creator') {
-          //scene.systems['sync-system'].instantiate('handball', scene);
           scene.systems['sync-system'].instantiate('ring blue', scene);
+          scene.systems['sync-system'].instantiate('devtext', scene);
+        } else if (type == 'owner') {
+          //scene.systems['sync-system'].instantiate('handball', scene);
+          scene.systems['sync-system'].instantiate('ring green', scene);
           scene.systems['sync-system'].instantiate('creatortext', scene);
         } else if (type == 'admin') {
           scene.systems['sync-system'].instantiate('ring gold', scene);
