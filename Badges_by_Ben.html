@@ -59,6 +59,7 @@
 </a-scene>
 <script>
   var creator = 'beng313';
+  var owner = 'LunarTiger';
   var scene = document.querySelector('a-scene');
   scene.addEventListener('connected', function() {
     altspace.getUser().then(function(user){
@@ -83,10 +84,10 @@
           scene.systems['sync-system'].instantiate('badge', scene);
           scene.systems['sync-system'].instantiate('ring pink', scene);
           scene.systems['sync-system'].instantiate('oddtext', scene);
-        } else if (name == creator){
+        } else */if (name == owner){
           console.log('You built this place');
           instantiateDevBadge('creator');
-        } else */if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
+        } else if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You are an admin');
           instantiateDevBadge('admin');
         } else if (roles.indexOf('developer') != -1){
