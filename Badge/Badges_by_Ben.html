@@ -20,11 +20,13 @@
     <a-mixin id='gold' material='color: #ffbf00; side: double'></a-mixin>
     <a-mixin id='pink' material='color: #e512c9; side: double'></a-mixin>
     <a-mixin id='green' material='color: #006900; side: double'></a-mixin>
+    <a-mixin id='lidiayellow' material='color: #d8b102; side: double'></a-mixin>
     
     <a-mixin id='creatortext' n-text='fontSize: 1; text: <color=black>I am a\nwizard' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='ownertext' n-text='fontSize: 1; text: <color=black>I built\nthis place' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='devtext' n-text='fontSize: 1; text: <color=black>I am a\ndeveloper' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='admintext' n-text='fontSize: 1; text: <color=black>I work\nhere' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='lidiatext' n-text='fontSize: 1; text: <color=black>I am\ndeveloped' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
   </a-assets>
 </a-scene>
 <script>
@@ -47,6 +49,9 @@
         } else if (name == owner){
           console.log('You built this place');
           instantiateDevBadge('owner');
+        } else if (name == 'Lidia_Chlamydia'){
+          console.log('You have chlamydia');
+          instantiateDevBadge('lidia');
         } else if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You are an admin');
           instantiateDevBadge('admin');
@@ -65,6 +70,9 @@
         } else if (type == 'owner') {
           scene.systems['sync-system'].instantiate('ring green', scene);
           scene.systems['sync-system'].instantiate('ownertext', scene);
+        } else if (type == 'lidia') {
+          scene.systems['sync-system'].instantiate('ring lidiayellow', scene);
+          scene.systems['sync-system'].instantiate('lidiatext', scene);
         } else if (type == 'admin') {
           scene.systems['sync-system'].instantiate('ring gold', scene);
           scene.systems['sync-system'].instantiate('admintext', scene);
