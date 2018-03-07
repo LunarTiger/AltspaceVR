@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Badges</title>
+  <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+  <script src="https://sdk.altvr.com/libs/altspace.js/2.4.0/altspace.min.js"></script>
+</head>
+<body>
+<a-scene altspace='fullspace: true' sync-system='author: LunarTiger; app: adminBadge; refUrl: https://altvr-apps.firebaseio.com/'>
+  <a-assets>
+    <img id='badgeb' src='https://lunartiger.github.io/AltspaceVR/Badge/badge.png'>
+    <a-mixin id='badge' geometry='primitive: circle; radius: .038' material='src: #badgeb; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='ring' geometry='primitive: ring; radius-outer: .04; radius-inner: .038' material='color: #ffbf00; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='admintext' n-text='fontSize: 1; text: <color=black>I work\nhere' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+  </a-assets>
+</a-scene>
+<script>
+  var scene = document.querySelector('a-scene');
+  scene.addEventListener('connected', function() {
+    altspace.getUser().then(function(user){
+      var dataRequest = (THREE.FileLoader ? new THREE.FileLoader() : new THREE.XHRLoader(/* DEPRECATED: r83 */));
+      dataRequest.setWithCredentials(true);
+      dataRequest.load('https://account.altvr.com/api/v1/users/' + user.userId, onLoaded, undefined, undefined);
+      function onLoaded(obj) {
+        var roles = JSON.parse(obj).users[0].roles;
+        console.log('Your roles:',roles);
+        } if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
+          console.log('You work here');
+          instantiateDevBadge('admin');
+        } else {
+          console.log('You do not work here');
+        }
+      }
+      function instantiateDevBadge(type) {
+        scene.systems['sync-system'].instantiate('badge', scene);
+        if (type == 'admin') {
+          scene.systems['sync-system'].instantiate('ring', scene);
+          scene.systems['sync-system'].instantiate('admintext', scene);
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
