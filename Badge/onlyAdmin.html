@@ -26,7 +26,6 @@
         console.log('Your roles:',roles);
         } if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You work here');
-          instantiateDevBadge('admin');
           scene.systems['sync-system'].instantiate('badge', scene);
           scene.systems['sync-system'].instantiate('ring', scene);
           scene.systems['sync-system'].instantiate('admintext', scene);
