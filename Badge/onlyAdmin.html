@@ -24,7 +24,7 @@
       function onLoaded(obj) {
         var roles = JSON.parse(obj).users[0].roles;
         console.log('Your roles:',roles);
-        } if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
+        if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You work here');
           scene.systems['sync-system'].instantiate('badge', scene);
           scene.systems['sync-system'].instantiate('ring', scene);
