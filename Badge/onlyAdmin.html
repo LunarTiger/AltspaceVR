@@ -27,15 +27,11 @@
         } if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You work here');
           instantiateDevBadge('admin');
-        } else {
-          console.log('You do not work here');
-        }
-      }
-      function instantiateDevBadge(type) {
-        scene.systems['sync-system'].instantiate('badge', scene);
-        if (type == 'admin') {
+          scene.systems['sync-system'].instantiate('badge', scene);
           scene.systems['sync-system'].instantiate('ring', scene);
           scene.systems['sync-system'].instantiate('admintext', scene);
+        } else {
+          console.log('You do not work here');
         }
       }
     });
