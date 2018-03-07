@@ -21,12 +21,14 @@
     <a-mixin id='pink' material='color: #e512c9; side: double'></a-mixin>
     <a-mixin id='green' material='color: #006900; side: double'></a-mixin>
     <a-mixin id='lidiayellow' material='color: #d8b102; side: double'></a-mixin>
+    <a-mixin id='burgandy' material='color: #800813; side: double'></a-mixin>
     
     <a-mixin id='creatortext' n-text='fontSize: 1; text: <color=black>I am a\nwizard' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='ownertext' n-text='fontSize: 1; text: <color=black>I built\nthis place' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='devtext' n-text='fontSize: 1; text: <color=black>I am a\ndeveloper' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='admintext' n-text='fontSize: 1; text: <color=black>I work\nhere' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='lidiatext' n-text='fontSize: 1; text: <color=black>I am\ndeveloped' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='shanetext' n-text='fontSize: 1; text: <color=black>I develop\n8008135' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
   </a-assets>
 </a-scene>
 <script>
@@ -52,6 +54,9 @@
         } else if (name == 'Lidia_Chlamydia'){
           console.log('You have chlamydia');
           instantiateDevBadge('lidia');
+        } else if (name == 'shakamone'){
+          console.log('boobs');
+          instantiateDevBadge('shane');
         } else if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You are an admin');
           instantiateDevBadge('admin');
@@ -73,6 +78,9 @@
         } else if (type == 'lidia') {
           scene.systems['sync-system'].instantiate('ring lidiayellow', scene);
           scene.systems['sync-system'].instantiate('lidiatext', scene);
+        } else if (type == 'shane') {
+          scene.systems['sync-system'].instantiate('ring burgandy', scene);
+          scene.systems['sync-system'].instantiate('shanetext', scene);
         } else if (type == 'admin') {
           scene.systems['sync-system'].instantiate('ring gold', scene);
           scene.systems['sync-system'].instantiate('admintext', scene);
