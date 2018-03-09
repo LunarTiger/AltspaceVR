@@ -14,9 +14,9 @@
 	<a href="https://lunartiger.github.io/AltspaceVR/Redirector/" style="text-decoration:underline; color: black;"><h3>Redirector</h3></a>
 	<h3>Teleport Hub</h3>
 		<ul>
-			<li><a href="https://lunartiger.github.io/AltspaceVR/teleport_hub.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/teleport_hub.html</a></li>
+			<li><a href="https://lunartiger.github.io/AltspaceVR/teleportHub/app.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/teleportHub/app.html</a></li>
 			<hr style="height:1px; visibility:hidden;" />
-			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/teleport_hub.html">View Source</a></li>
+			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/teleportHub/app.html">View Source</a></li>
 		</ul>
 	<h3>Portal to the Teleport Hub</h3>
 		<ul>
