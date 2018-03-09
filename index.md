@@ -11,7 +11,7 @@
 			<hr style="height:1px; visibility:hidden;" />
 			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/home_portals.html">View Source</a></li>
 		</ul>
-	<a href="https://lunartiger.github.io/AltspaceVR/Redirector/" style="text-decoration:none; color: black;"><h3>Redirector</h3></a>
+	<a href="https://lunartiger.github.io/AltspaceVR/Redirector/" style="text-decoration:underline; color: black;"><h3>Redirector</h3></a>
 	<h3>Teleport Hub</h3>
 		<ul>
 			<li><a href="https://lunartiger.github.io/AltspaceVR/teleport_hub.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/teleport_hub.html</a></li>
