@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pay No Attention To This And Go To The Teleport Hub NOW</title>
+    <meta name="Pay No Attention To This And Go To The Teleport Hub NOW" content="Pay No Attention To This And Go To The Teleport Hub NOW">
+    <!--Calling on aframes JS-->
+    <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+    <!--Calling on the Altspace SDK js-->
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.7.4/altspace.min.js"></script>
+  </head>
+  <body>
+    <!-- Starting the scene, defining the space to be a fullspace app-->
+    <a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">
+      <a-entity position='0 -250 0' rotation='0 0 0' scale = '500 500 500' n-portal='targetSpace: lunar-s-teleport-hub'></a-entity>
+      <a-entity position='0 -250 0' rotation='0 180 0' scale = '500 500 500' n-portal='targetSpace: lunar-s-teleport-hub'></a-entity>
+    </a-scene>
+  </body>
+</html>
