@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>button</title> 
+	</head>
+	<body>
+	<script>
+		// You can change the icon to any PNG image.
+		var iconUrl = getFullUrl('portal.png');
+
+		// The code below creates the HUD icon. You shouldn't have to change any of it.
+
+		// The altspace.open API allows us to add a button to the HUD.
+		var popupUrl = getFullUrl('popup.html' + location.search);
+		altspace.open(popupUrl, '_experience', {
+			icon: iconUrl,
+			hidden: true
+		});
+
+		// This just constructs an absolute URL if you give it a relative one
+		function getFullUrl(path) {
+			var currPath = location.pathname;
+			if (currPath[currPath.length -1] !== '/') {
+				currPath = location.pathname.split('/').slice(0, -1).join('/') + '/';
+			}
+			return location.origin + currPath + path;
+		}
+	</script>
+	</body>
+</html>
