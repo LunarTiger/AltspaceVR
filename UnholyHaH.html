@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Campfire Master</title>
+		<meta name="Campfire Master" content="Campfire Master">
+    <meta http-equiv="refresh" content="5;URL='http://hah.jacobralph.org:7878/play?gameId=qc5AxjCQ2WPmKKF7v'" />
+		<!--Calling on aframes JS-->
+		<script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+		<!--Calling on the Altspace SDK js-->
+		<script src="https://sdk.altvr.com/libs/altspace.js/2.6.2/altspace.min.js"></script>
+	</head>
+	<body>
+		<!-- Starting the scene, defining the alignment of the scene to the middle of the boundary box and be a full space app-->
+		<a-scene altspace="verticalAlign: bottom" vr-mode-ui="enabled: false">
+			<!--Make another boundary box and load button-->
+			<a-entity position="0 -5000 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:true;"></a-entity>
+    <!--Ending the scene--> 
+		</a-scene>
+	</body>
+</html>
