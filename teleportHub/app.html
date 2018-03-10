@@ -20,20 +20,17 @@
 			<!--Load portals-->
 			<a-entity n-text="fontSize: 4; text:Public Spaces" position="0 3.4 -10" rotation='0 0 0' visible></a-entity>
 			<!--Campfire-->
-				<a-entity position='0 0.2 -10' rotation='0 0 0' n-portal='targetSpace: campfire-lobby'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Campfire" position="0 0.7 -10" rotation='0 0 0' visible></a-entity>
+				<a-entity position='1 0.2 -10' rotation='0 0 0' n-portal='targetSpace: campfire-lobby'></a-entity>
+				<a-entity n-text="fontSize: 2; text:Campfire" position="1 0.7 -10" rotation='0 0 0' visible></a-entity>
 			<!--Lobby-->
-				<a-entity position='-2 0.2 -10' rotation='0 0 0' n-portal='targetSpace: lobby'></a-entity>
+				<a-entity position='-1 0.2 -10' rotation='0 0 0' n-portal='targetSpace: lobby'></a-entity>
 				<a-entity n-text="fontSize: 2; text:Lobby" position="-2 0.7 -10" rotation='0 0 0' visible></a-entity>
 			<!--Spire 4-->
-				<a-entity position='-4 0.2 -10' rotation='0 0 0' n-portal='targetSpace: event-606878869948990299-848'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Spire 4" position="-4 0.7 -10" rotation='0 0 0' visible></a-entity>
-			<!--VIP Lobby-->
-				<a-entity position='2 0.2 -10' rotation='0 0 0' n-portal='targetSpace: vip-lobby'></a-entity>
-				<a-entity n-text="fontSize: 2; text:VIP Lobby" position="2 0.7 -10" rotation='0 0 0' visible></a-entity>
+				<a-entity position='-3 0.2 -10' rotation='0 0 0' n-portal='targetSpace: event-606878869948990299-848'></a-entity>
+				<a-entity n-text="fontSize: 2; text:Spire 4" position="-3 0.7 -10" rotation='0 0 0' visible></a-entity>
 			<!--Miguel's Party Plaza-->
-				<a-entity position='4 0.2 -10' rotation='0 0 0' n-portal='targetSpace: explorer-ncb-party-plaza'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Miguel's<br>Party Plaza" position="4 0.7 -10" rotation='0 0 0' visible></a-entity>
+				<a-entity position='3 0.2 -10' rotation='0 0 0' n-portal='targetSpace: explorer-ncb-party-plaza'></a-entity>
+				<a-entity n-text="fontSize: 2; text:Miguel's<br>Party Plaza" position="3 0.7 -10" rotation='0 0 0' visible></a-entity>
 			
 			<a-entity n-text="fontSize: 4; text:Lunar's Spaces" position="-10 3.4 0" rotation='0 90 0' visible></a-entity>
 			<!--Lunar's Tavern-->
@@ -99,12 +96,24 @@
 					if(NUI.filter(function(id){return id===user.userId}).length || isAdmin){
 						var portal_entity = document.createElement('a-entity');
 						var text_entity = document.createElement('a-entity');
+						portal_entity.setAttribute('n-portal','targetSpace: vip-lobby');
+						portal_entity.setAttribute('rotation','0 -90 0');
+						portal_entity.setAttribute('position','63 0.2 -2');
+						text_entity.setAttribute('n-text','fontSize: 2; text:VIP Lobby');
+						text_entity.setAttribute('rotation','0 -90 0');
+						text_entity.setAttribute('position','63 0.7 -2');
+						document.querySelector('a-scene').appendChild(portal_entity);
+						document.querySelector('a-scene').appendChild(text_entity);
+					}
+					if(NUI.filter(function(id){return id===user.userId}).length || isAdmin){
+						var portal_entity = document.createElement('a-entity');
+						var text_entity = document.createElement('a-entity');
 						portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
 						portal_entity.setAttribute('rotation','0 -90 0');
-						portal_entity.setAttribute('position','63 0.2 -1');
+						portal_entity.setAttribute('position','63 0.2 0');
 						text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
 						text_entity.setAttribute('rotation','0 -90 0');
-						text_entity.setAttribute('position','63 0.7 -1');
+						text_entity.setAttribute('position','63 0.7 0');
 						document.querySelector('a-scene').appendChild(portal_entity);
 						document.querySelector('a-scene').appendChild(text_entity);
 					}
@@ -113,10 +122,10 @@
 						var text_entity = document.createElement('a-entity');
 						portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
 						portal_entity.setAttribute('rotation','0 -90 0');
-						portal_entity.setAttribute('position','63 0.2 1');
+						portal_entity.setAttribute('position','63 0.2 2');
 						text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
 						text_entity.setAttribute('rotation','0 -90 0');
-						text_entity.setAttribute('position','63 0.7 1');
+						text_entity.setAttribute('position','63 0.7 2');
 						document.querySelector('a-scene').appendChild(portal_entity);
 						document.querySelector('a-scene').appendChild(text_entity);
 					}
