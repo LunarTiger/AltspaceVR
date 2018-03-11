@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>popup</title>
+		<style>
+			.invisible { background: transparent; color: transparent; }
+			body {text-align:center;}
+		</style>
+	</head>
+	<body>
+		<a href="altspace://account.altvr.com/spaces/campfire-lobby"><button type="button" name="Campfire"><h1>Campfire<h1></button></a>
+
+	<!-- change the altspace:// URL below to navigate to a different space -->
+	<a id="link" class="invisible" href="altspace://account.altvr.com/spaces/campfire-lobby">go</a>
+
+	<script>
+		// The code below just takes care of navigating to the space when the popup button is clicked. 
+		// You shouldn't have to change any of it.
+		altspace.getEnclosure().then(function (enc) {
+			var openCheckIntervalId = setInterval(function () {
+				if (enc.pixelsPerMeter < 10000) {
+					// The SDK doesn't directly support navigating to space, but we can do it indirectly by simulating a 
+					// click on an altspace:// link.
+					document.getElementById('link').click();
+					clearInterval(openCheckIntervalId);
+				}
+			}, 10);
+		});
+	</script>
+	</body>
+</html>
