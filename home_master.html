@@ -57,13 +57,25 @@
 						var text_entity = document.createElement('a-entity');
 						portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
 						portal_entity.setAttribute('rotation','0 -90 0');
+						portal_entity.setAttribute('position','7.5 0.5 15.5');
+						text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
+						text_entity.setAttribute('rotation','0 -90 0');
+						text_entity.setAttribute('position','7.5 1 15.5');
+						document.querySelector('a-scene').appendChild(portal_entity);
+						document.querySelector('a-scene').appendChild(text_entity);
+					}
+					/*if(hidden.filter(function(id){return id===user.userId}).length || isAdmin){
+						var portal_entity = document.createElement('a-entity');
+						var text_entity = document.createElement('a-entity');
+						portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
+						portal_entity.setAttribute('rotation','0 -90 0');
 						portal_entity.setAttribute('position','6.5 0.5 -8');
 						text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
 						text_entity.setAttribute('rotation','0 -90 0');
 						text_entity.setAttribute('position','6.5 1 -8');
 						document.querySelector('a-scene').appendChild(portal_entity);
 						document.querySelector('a-scene').appendChild(text_entity);
-					}
+					}*/
 				}
 			})
 			var sim = new altspace.utilities.Simulation();
