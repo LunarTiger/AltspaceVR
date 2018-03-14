@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<!-- http://output.jsbin.com/hevojad -->
+  <head>
+    <meta name="description" content="Vortex version : Andys Mod of Ducky's Fly Script">
+    <title>Duckys Fly - Andys Rip</title>
+    <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.8.0/altspace.min.js"></script>
+    <script src="https://tweenjs.github.io/tween.js/src/Tween.js"></script>
+    <script src="http://cdn.rawgit.com/oOblik/AltspaceVR-Native-Components-JS/0.1.2/js/JSNativeComponents.js"></script>
+    <script>
+      AFRAME.registerComponent('collapse-model', {
+        init: function () {
+          this.el.addEventListener('model-loaded', function () {
+            this.el.setObject3D('mesh', this.el.object3DMap.mesh.children[0]);
+            // setObject3D emits this event in a-frame 0.4.0
+            this.el.emit('object3dset', {type: 'mesh'});
+          }.bind(this));
+        }
+      });
+    </script>
+</head>
+  <body>
+
+    <a-scene altspace="fullspace: true"> 
+ 
+      <a-assets>
+        
+        <img id="resetT" src="http://duckluck.net/open/reset.jpg">
+        <img id="downT" src="http://duckluck.net/open/down.jpg">
+        <img id="upT" src="http://duckluck.net/open/up.jpg">
+        
+      </a-assets>
+
+     <a-entity position=" 0 100 0" id="box" n-box-collider="isTrigger:true; type:environment; size: 200 50 200" n-container="capacity:1" wire="on: container-full; emit: trig; targets: #box"></a-entity>
+      
+      <a-box id='elevator' material="visible:false" scale='200 1 200' position='0 -0.5 0' n-box-collider='type: environment; convex: false'></a-box>
+      
+      <a-plane id="reset" src='#resetT' position='-1 0.5 -1.61' rotation='-25 0 0' scale='0.15 0.15 0' opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="up" src='#upT' position='-0.6 0.5 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="down" src='#downT' position='-0.8 0.5 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      
+    <a-entity id="text" n-text='text:0m' position='-0.89 0.35 -1.54' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-entity>
+      <a-plane color='#472222' position='-0.92 0.35.5 -1.541' rotation="-25 0 0" scale="0.32 0.10 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-entity>
+
+    </a-scene>
+    
+    <script>
+    altspace.getUser().then(function(user)
+    {
+        var dataRequest = (THREE.FileLoader ? new THREE.FileLoader() : new THREE.XHRLoader(/* DEPRECATED: r83 */));
+        dataRequest.setWithCredentials(true);
+        dataRequest.load('https://account.altvr.com/api/v1/users/' + user.userId, onLoaded, undefined, undefined);
+        function onLoaded(obj) {
+            var role = JSON.parse(obj).users[0].platform_roles;
+            if (role.indexOf('developer') != -1) {
+                document.querySelector('#up').setAttribute('position', '-0.6 0.5 -1.61');
+                document.querySelector('#down').setAttribute('position', '-0.8 0.5 -1.61');
+                console.log('you are a developer');
+            }
+            else {
+                document.querySelector('#up').setAttribute('position', '-0.6 0.5 -1.61');
+                document.querySelector('#down').setAttribute('position', '-0.8 0.5 -1.61');
+                console.log('you are Not a developer');
+            }
+        }
+    });
+    </script>
+      <script>
+      var sim = new altspace.utilities.Simulation();
+      sim.scene.addBehavior(altspace.utilities.behaviors.GamepadControls);
+      var height = 0;
+      altspace.getGamepads();
+      var pads =[];
+      var htxt
+       
+      var box = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({color: 0x6d00aa}));
+      box.position.y = 1;
+      //sim.scene.add(box);
+      new NativeComponent('n-box-collider', {type: 'hologram',size: '0.15 0.15 0.03'}, box).addTo(sim.scene);
+      box.position.set(48.5,0.5,-6);
+      box.addEventListener('cursorup', function(){
+        console.log('click');
+        pads = altspace.getGamepads();
+        console.log("Activated");
+        console.log(pads[1]);
+        console.log(pads[2]);
+        console.log(pads[1].buttons[2].value);
+        console.log(pads[2].buttons[2].value);
+        bp()
+      });
+
+      document.querySelector('#box').addEventListener('trig', function(){
+        go()
+      });
+      
+      document.querySelector('#up').setAttribute('position', '-0.61 0.05 -1.55');
+      document.querySelector('#down').setAttribute('position', '-0.81 0.05 -1.55');
+      
+      console.log(pads);
+      
+      
+      document.querySelector('#up').addEventListener('mousedown', function() {move(1)});
+      document.querySelector('#down').addEventListener('mousedown', function() {move(-1)});
+      document.querySelector('#reset').addEventListener('mousedown', function() {reset()});
+     
+      var el = document.querySelector('#elevator').object3D;
+      
+      function move(i) {
+        height += i;
+        new TWEEN.Tween(el.position).to({y:height - .5}, 500).start();
+        htxt = Math.round(height);
+        document.querySelector('#text').setAttribute('n-text', 'text:' + htxt + 'm');
+      }
+      function reset() {
+        height = 0;
+        el.position.y = -0.5;
+        document.querySelector('#text').setAttribute('n-text', 'text: 0m');
+        //console.log(pads);
+      }
+      function go() {
+        pads = altspace.getGamepads();
+        console.log("Activated Aframe");
+        console.log(pads[1]);
+        console.log(pads[2]);
+        console.log(pads[1].buttons[2].value);
+        console.log(pads[2].buttons[2].value);
+      }
+      loop()
+      function loop() {
+        TWEEN.update();
+        //console.log(pads);
+        requestAnimationFrame(loop);
+        if (pads[2].buttons[2].value == 1) {
+          console.log(pads[2].buttons[2].value);
+          move(0.1);
+        }
+        if (pads[1].buttons[2].value == 1) {
+          console.log(pads[2].buttons[2].value);
+          move(-0.1);
+        }
+      }
+    </script>
+
+
+</body>
+</html>
