@@ -41,7 +41,7 @@
       <a-plane id="up" src='#upT' position='-0.6 0.5 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
       <a-plane id="down" src='#downT' position='-0.8 0.5 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
       
-    <a-entity id="text" n-text='text:0m' position='-0.89 0.35 -1.54' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-entity>
+    <a-entity id="text" n-text='text:-5m' position='-0.89 0.35 -1.54' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-entity>
       <a-plane color='#472222' position='-0.92 0.35.5 -1.541' rotation="-25 0 0" scale="0.32 0.10 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-entity>
 
     </a-scene>
@@ -114,9 +114,9 @@
         document.querySelector('#text').setAttribute('n-text', 'text:' + htxt + 'm');
       }
       function reset() {
-        height = 0;
+        height = -5;
         el.position.y = -0.5;
-        document.querySelector('#text').setAttribute('n-text', 'text: 0m');
+        document.querySelector('#text').setAttribute('n-text', 'text: -5m');
         //console.log(pads);
       }
       function go() {
