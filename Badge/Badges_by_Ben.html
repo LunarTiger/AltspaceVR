@@ -37,9 +37,7 @@
   var scene = document.querySelector('a-scene');
   scene.addEventListener('connected', function() {
     altspace.getUser().then(function(user){
-      if (user.legacyUserId) {
-        user.userId = user.legacyUserId;
-      }
+      if (user.legacyUserId){user.userId = user.legacyUserId;}
       var dataRequest = (THREE.FileLoader ? new THREE.FileLoader() : new THREE.XHRLoader(/* DEPRECATED: r83 */));
       dataRequest.setWithCredentials(true);
       dataRequest.load('https://account.altvr.com/api/v1/users/' + user.userId, onLoaded, undefined, undefined);
