@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
+		<!--<style>
 			body {text-align:center;background-color: #000000;color: #00ff00;}
 			h1 {color: #006900;}
-		</style>
+		</style>-->
 		<meta charset="UTF-8">
 		<title>Teleport Hub</title>
 		<meta name="Teleport Hub" content="Teleport Hub">
@@ -134,6 +134,11 @@
 					}
 				}
 			})
+			var text_entity = document.createElement('a-entity');
+			text_entity.setAttribute('n-text','fontSize: 4; text:Public Spaces');
+			text_entity.setAttribute('rotation','0 0 0');
+			text_entity.setAttribute('position','0 3.4 -10');
+			document.querySelector('a-scene').appendChild(text_entity);
 			var publicname = ["Spire 4","Lobby","Campfire","Miguel's<br>Party Plaza"];
 			var publicspace = ['event-606878869948990299-848','lobby','campfire-lobby','explorer-ncb-party-plaza'];
 			var x=-3;
@@ -142,10 +147,10 @@
 				var text_entity = document.createElement('a-entity');
 				portal_entity.setAttribute('n-portal','targetSpace:'+publicspace[count]);
 				portal_entity.setAttribute('rotation','0 0 0');
-				portal_entity.setAttribute('position','x 0.2 -10');
+				portal_entity.setAttribute('position',x+' 0.2 -10');
 				text_entity.setAttribute('n-text',"fontSize: 2; text:"+publicname[count]);
 				text_entity.setAttribute('rotation','0 0 0');
-				text_entity.setAttribute('position','x 0.7 -10');
+				text_entity.setAttribute('position',x+' 0.7 -10');
 				x=x+2;
 				document.querySelector('a-scene').appendChild(portal_entity);
 				document.querySelector('a-scene').appendChild(text_entity);
