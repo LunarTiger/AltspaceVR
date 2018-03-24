@@ -22,10 +22,12 @@
     <a-mixin id='green' material='color: #006900; side: double'></a-mixin>
     <a-mixin id='lidiayellow' material='color: #d8b102; side: double'></a-mixin>
     <a-mixin id='burgandy' material='color: #800813; side: double'></a-mixin>
+    <a-mixin id='teal' material='color: #00ffff; side: double'></a-mixin>
     
     <a-mixin id='creatortext' n-text='fontSize: 1; text: <color=black>I am a\nwizard' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='ownertext' n-text='fontSize: 1; text: <color=black>I built\nthis place' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='devtext' n-text='fontSize: 1; text: <color=black>I am a\ndeveloper' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+    <a-mixin id='betatext' n-text='fontSize: 1; text: <color=black>I am a\nbeta tester' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='admintext' n-text='fontSize: 1; text: <color=black>I work\nhere' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='lidiatext' n-text='fontSize: 1; text: <color=black>I am\ndeveloped' position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
     <a-mixin id='shanetext' n-text="fontSize: 1; text: <color=black>I'm Ron\nBurgundy" position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
@@ -61,9 +63,15 @@
         } else if (roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){
           console.log('You are an admin');
           instantiateDevBadge('admin');
+        } else if (roles.indexOf('developer' && 'beta) != -1){
+          console.log('You are a developer and beta tester');
+          instantiateDevBadge('both');
         } else if (roles.indexOf('developer') != -1){
           console.log('You are a developer');
           instantiateDevBadge('dev');
+        } else if (roles.indexOf('beta') != -1){
+          console.log('You are a beta tester');
+          instantiateDevBadge('beta');
         } else {
           console.log('You are not a developer');
         }
@@ -85,9 +93,15 @@
         } else if (type == 'admin') {
           scene.systems['sync-system'].instantiate('ring gold', scene);
           scene.systems['sync-system'].instantiate('admintext', scene);
+        } else if (type == 'both') {
+          scene.systems['sync-system'].instantiate('ring teal', scene);
+          scene.systems['sync-system'].instantiate('devtext', scene);
         } else if (type == 'dev') {
           scene.systems['sync-system'].instantiate('ring', scene);
           scene.systems['sync-system'].instantiate('devtext', scene);
+        } else if (type == 'beta') {
+          scene.systems['sync-system'].instantiate('ring teal', scene);
+          scene.systems['sync-system'].instantiate('betatext', scene);
         }
       }
     });
