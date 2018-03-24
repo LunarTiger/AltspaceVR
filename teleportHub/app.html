@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
+	<script>
+		/*********************************************************************
+		 *             Please note, I no longer use this script.             *
+		 *  Instead, I use shane's editor. This code is just an example.     *
+		 *                The scene is avaliable here:                       *
+		 *      http://shanesedit.org/r/Teleport Hub_820629041114514394      *
+		 *                                                                   *
+		 *********************************************************************/
+	</script>
 	<head>
-		<!--<style>
-			body {text-align:center;background-color: #000000;color: #00ff00;}
-			h1 {color: #006900;}
-		</style>-->
 		<meta charset="UTF-8">
 		<title>Teleport Hub</title>
 		<meta name="Teleport Hub" content="Teleport Hub">
@@ -14,30 +19,15 @@
 		<script src="https://sdk.altvr.com/libs/altspace.js/2.6.2/altspace.min.js"></script>
 	</head>
 	<body>
-		<!--<h1><a href='http://shanesedit.org/r/Teleport Hub_820629041114514394'>Teleport Hub on Shane's Editor</a></h1>
 		<!-- Starting the scene, defining the alignment of the scene to the bottom of the boundary box-->
 		<a-scene altspace='vertical-align: bottom'>
 			<!--Asset Loading-->
 			<!--<a-assets> 
 			</a-assets>-->
 			<!--Make a boundary box and load badges-->
-			<!--<a-entity n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html?altspace-sync-instance=-L6JmH6lacq_WR9FPIvR;isEnclosure:true;"></a-entity>
+			<!--<a-entity n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html?altspace-sync-instance=-L6JmH6lacq_WR9FPIvR;isEnclosure:true;"></a-entity>-->
 			<!--Load portals-->
-			<!--<a-entity n-text="fontSize: 4; text:Public Spaces" position="0 3.4 -10" rotation='0 0 0' visible></a-entity>
-			<!--Spire 4-->
-				<!--<a-entity position='-3 0.2 -10' rotation='0 0 0' n-portal='targetSpace: event-606878869948990299-848'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Spire 4" position="-3 0.7 -10" rotation='0 0 0' visible></a-entity>
-			<!--Lobby-->
-				<!--<a-entity position='-1 0.2 -10' rotation='0 0 0' n-portal='targetSpace: lobby'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Lobby" position="-1 0.7 -10" rotation='0 0 0' visible></a-entity>
-			<!--Campfire-->
-				<!--<a-entity position='1 0.2 -10' rotation='0 0 0' n-portal='targetSpace: campfire-lobby'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Campfire" position="1 0.7 -10" rotation='0 0 0' visible></a-entity>
-			<!--Miguel's Party Plaza-->
-				<!--<a-entity position='3 0.2 -10' rotation='0 0 0' n-portal='targetSpace: explorer-ncb-party-plaza'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Miguel's<br>Party Plaza" position="3 0.7 -10" rotation='0 0 0' visible></a-entity>
-			
-			<a-entity n-text="fontSize: 4; text:Lunar's Spaces" position="-10 3.4 0" rotation='0 90 0' visible></a-entity>
+			<!--<a-entity n-text="fontSize: 4; text:Lunar's Spaces" position="-10 3.4 0" rotation='0 90 0' visible></a-entity>
 			<!--Unholy HaH-->
 				<!--<a-entity position='-10 0.2 3' rotation='0 90 0' n-portal='targetSpace: adultier-hah'></a-entity>
 				<a-entity n-text="fontSize: 2; text:Unholy HaH" position="-10 0.7 3" rotation='0 90 0' visible></a-entity>
@@ -51,7 +41,7 @@
 				<!--<a-entity position='-10 0.2 -3' rotation='0 90 0' n-portal='targetSpace: glitchy-house'></a-entity>
 				<a-entity n-text="fontSize: 2; text:Glitchy House" position="-10 0.7 -3" rotation='0 90 0' visible></a-entity>
 			
-			<a-entity n-text="fontSize: 4; text:User Created Spaces" position="0 3.4 10" rotation='0 180 0' visible></a-entity>
+			<!--<a-entity n-text="fontSize: 4; text:User Created Spaces" position="0 3.4 10" rotation='0 180 0' visible></a-entity>
 			<!--Faceman's Space Hub-->
 				<!--<a-entity position='7 0.2 10' rotation='0 180 0' n-portal='targetSpace: faceman-space-hub'></a-entity>
 				<a-entity n-text="fontSize: 2; text:FACEMAN<br>Space Hub" position="7 0.7 10" rotation='0 180 0' visible></a-entity>
@@ -103,9 +93,9 @@
 					if(roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){isAdmin = true;}
 					if(hidden.filter(function(id){return id===user.userId}).length || pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
 						var text_entity = document.createElement('a-entity');
-						text_entity.setAttribute('n-text','fontSize: 10; text:Hidden Portals');
+						text_entity.setAttribute('n-text','fontSize: 15; text:Hidden Portals');
 						text_entity.setAttribute('rotation','0 -90 0');
-						text_entity.setAttribute('position','63 5 0');
+						text_entity.setAttribute('position','63 6 0');
 						document.querySelector('a-scene').appendChild(text_entity);
 					}
 					if(hidden.filter(function(id){return id===user.userId}).length || isAdmin){
@@ -134,21 +124,25 @@
 					}
 				}
 			})
-			var text_entity = document.createElement('a-entity');
-			text_entity.setAttribute('n-text','fontSize: 4; text:Public Spaces');
-			text_entity.setAttribute('rotation','0 0 0');
-			text_entity.setAttribute('position','0 3.4 -10');
-			document.querySelector('a-scene').appendChild(text_entity);
-			var publicname = ["Spire 4","Lobby","Campfire","Miguel's<br>Party Plaza"];
-			var publicspace = ['event-606878869948990299-848','lobby','campfire-lobby','explorer-ncb-party-plaza'];
+			var public_spaces = document.createElement('a-entity');
+			public_spaces.setAttribute('n-text','fontSize: 4; text:Public Spaces');
+			public_spaces.setAttribute('rotation','0 0 0');
+			public_spaces.setAttribute('position','0 3.4 -10');
+			document.querySelector('a-scene').appendChild(public_spaces);
+			var public = [
+				{name:"Spire 4",space:'event-606878869948990299-848',},
+				{name:"Lobby",space:'lobby'},
+				{name:"Campfire",space:'campfire-lobby'},
+				{name:"Miguel's<br>Party Plaza",space:'explorer-ncb-party-plaza'},
+			]
 			var x=-3;
-			for (count = 0; count < publicname.length; count++){
+			for (count = 0; count < public.length; count++){
 				var portal_entity = document.createElement('a-entity');
 				var text_entity = document.createElement('a-entity');
-				portal_entity.setAttribute('n-portal','targetSpace:'+publicspace[count]);
+				portal_entity.setAttribute('n-portal','targetSpace:'+public[count].space);
 				portal_entity.setAttribute('rotation','0 0 0');
 				portal_entity.setAttribute('position',x+' 0.2 -10');
-				text_entity.setAttribute('n-text',"fontSize: 2; text:"+publicname[count]);
+				text_entity.setAttribute('n-text',"fontSize: 2; text:"+public[count].name);
 				text_entity.setAttribute('rotation','0 0 0');
 				text_entity.setAttribute('position',x+' 0.7 -10');
 				x=x+2;
