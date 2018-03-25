@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9058e876-03f8-4282-9d4b-88c3010a5b0d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/remove-portal.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/add-portal.html" afterPath="$PROJECT_DIR$/add-portal.html" />
+      <change beforePath="$PROJECT_DIR$/remove-portal.html" afterPath="$PROJECT_DIR$/remove-portal.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add-portal.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add-portal.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add-portal.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
@@ -28,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="remove-portal.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="remove-portal.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/remove-portal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="67" column="73" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="334">
+              <caret line="71" column="8" lean-forward="true" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -89,8 +88,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/users.json" />
-        <option value="$PROJECT_DIR$/remove-portal.html" />
         <option value="$PROJECT_DIR$/add-portal.html" />
+        <option value="$PROJECT_DIR$/remove-portal.html" />
       </list>
     </option>
   </component>
@@ -170,12 +169,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521971410159</updated>
       <workItem from="1521971411397" duration="1280000" />
-      <workItem from="1521976957272" duration="1892000" />
+      <workItem from="1521976957272" duration="2036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3172000" />
+    <option name="totallyTimeSpent" value="3316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -292,18 +291,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/remove-portal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="67" column="73" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/add-portal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="77" column="101" lean-forward="false" selection-start-line="77" selection-start-column="101" selection-end-line="77" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/remove-portal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="71" column="8" lean-forward="true" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
           <folding />
         </state>
       </provider>

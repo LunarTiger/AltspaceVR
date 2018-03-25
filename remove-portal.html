@@ -62,7 +62,7 @@
         var data = {
             username:document.getElementById('username').value,
             password:document.getElementById('password').value,
-            portalNumber:document.getElementById('portalNumber').value,
+            portalNumber:document.getElementById('portalNumber').value-1,
         };
         socket.emit('remove-portal',data);
         document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4>'
