@@ -79,8 +79,8 @@
             document.getElementById('saveFormContainer').style.display = 'block';
             document.getElementById('saveUser').addEventListener('click',function(){
                 var data = {
-                    username:document.getElementById('username').value,
-                    password:document.getElementById('password').value,
+                    username:document.getElementById('myUsername').value,
+                    password:document.getElementById('myPassword').value,
                     user:JSON.parse(msg)
                 };
                 socket.emit('add-portal',data);
