@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {text-align:center;background-color: #000000;color: #00ff00;}
+        footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;color: #00ff00;}
+        button {background-color: #000000;color: #00FF00;padding: 10px;border-radius: 10px;}
+        a:link {color: #00ff00;text-decoration:none;}
+        a:visited {color: #00ff00;text-decoration:none;}
+        a:hover {color: #00bf00;text-decoration:none;}
+        a:active {color: #008900;text-decoration:none;}
+        h2 {color: #006900;}
+        h3 {color: #006900;}
+        h6 {color: #00ff00;}
+        table {border: 1px solid #00ff00;margin-left:auto;margin-right:auto;}
+        th {padding: 10px;border: 4px solid #006900;text-align:center}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar's 2D Teleport Hub</title>
+    <meta name="Lunar's 2D Teleport Hub" content="Lunar's 2D Teleport Hub">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<a href="altspace://account.altvr.com/api/spaces/lunar-s-teleport-hub"><h1>Lunar's Teleport Hub</h1></a>
+<table>
+    <tr>
+        <th style="text-align:center"><a href="#public">Public Spaces</a></th>
+        <th style="text-align:center"><a href="#my">Lunar's Spaces</a></th>
+        <th style="text-align:center"><a href="#user">User Created Spaces</a></th>
+        <th style="text-align:center"><a href="#button">Button</a></th>
+    </tr>
+</table>
+<h2 id="submit">Space Submissions</h2>
+<p>I am currently looking for more awesome spaces to add to my hub! Did YOU make an awesome space!? Submit it here!</p>
+
+<div class="container" id="formContainer">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password">
+    </div>
+    <div class="form-group">
+        <label for="portalName">Name:</label>
+        <input type="text" class="form-control" id="portalName">
+    </div>
+    <div class="form-group">
+        <label for="usr">Space ID:</label>
+        <input type="text" class="form-control" id="portalSpaceId">
+    </div>
+    <div class="form-group">
+        <label for="usr">Image URL:</label>
+        <input type="text" class="form-control" id="portalImage">
+    </div>
+    <div class="btn btn-primary" id="addPortal">
+        Add Portal
+    </div>
+</div>
+
+
+<script src="https://shanesedit.org:8008/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+    var socket = io.connect('https://shanesedit.org:8008');
+    document.getElementById('addPortal').addEventListener('click',function(){
+        var data = {
+            username:document.getElementById('username').value,
+            password:document.getElementById('password').value,
+            portalName:document.getElementById('portalName').value,
+            portalSpaceId:document.getElementById('portalSpaceId').value,
+            portalImage:document.getElementById('portalImage').value,
+        };
+        socket.emit('add-portal',data);
+    })
+</script>
+</body>
+<footer>
+    <table>
+        <tr>
+            <th><a href='#top'>To Top</a></th>
+            <th style='width: 200px;border: 0px;'><p style="font-size:65%;">Last updated: 25/3/2018 3:13 UTC</p></th>
+            <th><a href="https://lunartiger.github.io/">Home</a></th>
+        </tr>
+    </table>
+</footer>
+</html>
