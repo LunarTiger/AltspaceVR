@@ -61,7 +61,7 @@
         socket.emit('md5',data);
         socket.on('md5',function(msg){
             console.log(msg);
-            document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4><br>'+JSON.stringify(msg);
+            document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4><br>'+msg;
         })
     })
 </script>
