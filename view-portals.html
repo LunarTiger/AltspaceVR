@@ -47,7 +47,7 @@
     socket.emit('portals');
     
     socket.on('portals',function(msg){
-        document.getElementById('formContainer').innerHTML = msg;
+        document.getElementById('formContainer').innerHTML = JSON.stringify(msg,null,4);
     })
 </script>
 </body>
