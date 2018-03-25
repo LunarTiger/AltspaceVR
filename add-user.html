@@ -83,7 +83,7 @@
                     password:document.getElementById('myPassword').value,
                     user:JSON.parse(msg)
                 };
-                socket.emit('add-portal',data);
+                socket.emit('add-user',data);
                 document.getElementById('saveFormContainer').innerHTML = '<h4>User Added. Thank You!</h4>'
             })
         });
