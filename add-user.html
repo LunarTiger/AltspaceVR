@@ -15,6 +15,7 @@
         h6 {color: #00ff00;}
         table {border: 1px solid #00ff00;margin-left:auto;margin-right:auto;}
         th {padding: 10px;border: 4px solid #006900;text-align:center}
+        #saveFormContainer {display:none;}
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,6 +50,19 @@
     </div>
 </div>
 
+<div class="container" id="saveFormContainer">
+    <div class="form-group">
+        <label for="username">Lunar's Username:</label>
+        <input type="text" class="form-control" id="myUsername">
+    </div>
+    <div class="form-group">
+        <label for="password">Lunar's Password:</label>
+        <input type="password" class="form-control" id="myPassword">
+    </div>
+    <div class="btn btn-primary" id="saveUser">
+        Save User
+    </div>
+</div>
 
 <script src="https://shanesedit.org:8008/socket.io/socket.io.js"></script>
 <script type="text/javascript">
@@ -62,7 +76,18 @@
         socket.on('md5',function(msg){
             console.log(msg);
             document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4><br>'+msg;
-        })
+            document.getElementById('saveFormContainer').style.display = 'block';
+            document.getElementById('saveUser').addEventListener('click',function(){
+                var data = {
+                    username:document.getElementById('username').value,
+                    password:document.getElementById('password').value,
+                    user:JSON.parse(msg)
+                };
+                socket.emit('add-portal',data);
+                document.getElementById('saveFormContainer').innerHTML = '<h4>User Added. Thank You!</h4>'
+            })
+        });
+
     })
 </script>
 </body>
