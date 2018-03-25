@@ -34,7 +34,7 @@
     </tr>
 </table>
 <h2 id="submit">Space Submissions</h2>
-<p>I am currently looking for more awesome spaces to add to my hub! Did YOU make an awesome space!? Submit it here!</p>
+<p>You can remove portals already created here.</p>
 
 <div class="container" id="formContainer">
     <div class="form-group">
@@ -46,19 +46,11 @@
         <input type="password" class="form-control" id="password">
     </div>
     <div class="form-group">
-        <label for="portalName">Portal Name:</label>
-        <input type="text" class="form-control" id="portalName">
-    </div>
-    <div class="form-group">
-        <label for="portalSpaceId">Space ID:</label>
-        <input type="text" class="form-control" id="portalSpaceId">
-    </div>
-    <div class="form-group">
-        <label for="portalImage">Image URL:</label>
-        <input type="text" class="form-control" id="portalImage">
+        <label for="portalNumber">Portal Number:</label>
+        <input type="text" class="form-control" id="portalNumber">
     </div>
     <div class="btn btn-primary" id="addPortal">
-        Add Portal
+        Remove Portal
     </div>
 </div>
 
@@ -66,15 +58,13 @@
 <script src="https://shanesedit.org:8008/socket.io/socket.io.js"></script>
 <script type="text/javascript">
     var socket = io.connect('https://shanesedit.org:8008');
-    document.getElementById('addPortal').addEventListener('click',function(){
+    document.getElementById('removePortal').addEventListener('click',function(){
         var data = {
             username:document.getElementById('username').value,
             password:document.getElementById('password').value,
-            portalName:document.getElementById('portalName').value,
-            portalSpaceId:document.getElementById('portalSpaceId').value,
-            portalImage:document.getElementById('portalImage').value,
+            portalNumber:document.getElementById('portalNumber').value,
         };
-        socket.emit('add-portal',data);
+        socket.emit('remove-portal',data);
         document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4>'
     })
 </script>
