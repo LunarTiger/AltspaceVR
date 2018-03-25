@@ -45,6 +45,7 @@
 <script type="text/javascript">
     var socket = io.connect('https://shanesedit.org:8008');
     socket.emit('portals');
+    
     socket.on('portals',function(msg){
         document.getElementById('formContainer').innerHTML = '<input type="text" value="'+JSON.stringify(msg)+'"/>'
     })
