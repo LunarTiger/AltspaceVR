@@ -26,56 +26,93 @@
 			</a-assets>-->
 			<!--Make a boundary box and load badges-->
 			<!--<a-entity n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html?altspace-sync-instance=-L6JmH6lacq_WR9FPIvR;isEnclosure:true;"></a-entity>-->
-			<!--Load portals-->
-			<!--<a-entity n-text="fontSize: 4; text:Lunar's Spaces" position="-10 3.4 0" rotation='0 90 0' visible></a-entity>
-			<!--Unholy HaH-->
-				<!--<a-entity position='-10 0.2 3' rotation='0 90 0' n-portal='targetSpace: adultier-hah'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Unholy HaH" position="-10 0.7 3" rotation='0 90 0' visible></a-entity>
-			<!--La Hoguera-->
-				<!--<a-entity position='-10 0.2 1' rotation='0 90 0' n-portal='targetSpace: el-fuego-del-campamento'></a-entity>
-				<a-entity n-text="fontSize: 2; text:La Hoguera" position="-10 0.7 1" rotation='0 90 0' visible></a-entity>
-			<!--Lunar's Tavern-->
-				<!--<a-entity position='-10 0.2 -1' rotation='0 90 0' n-portal='targetSpace: lunar-s-medieval-tavern'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Lunar's<br>Tavern" position="-10 0.7 -1" rotation='0 90 0' visible></a-entity>
-			<!--Glitchy House-->
-				<!--<a-entity position='-10 0.2 -3' rotation='0 90 0' n-portal='targetSpace: glitchy-house'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Glitchy House" position="-10 0.7 -3" rotation='0 90 0' visible></a-entity>
-			
-			<!--<a-entity n-text="fontSize: 4; text:User Created Spaces" position="0 3.4 10" rotation='0 180 0' visible></a-entity>
-			<!--Faceman's Space Hub-->
-				<!--<a-entity position='7 0.2 10' rotation='0 180 0' n-portal='targetSpace: faceman-space-hub'></a-entity>
-				<a-entity n-text="fontSize: 2; text:FACEMAN<br>Space Hub" position="7 0.7 10" rotation='0 180 0' visible></a-entity>
-			<!--Minecraft-->
-				<!--<a-entity position='5 0.2 10' rotation='0 180 0' n-portal='targetSpace: altmincraft'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Minecraft" position="5 0.7 10" rotation='0 180 0' visible></a-entity>
-			<!--Andy's Vortex Tunnel-->
-				<!--<a-entity position='3 0.2 10' rotation='0 180 0' n-portal='targetSpace: andy-s-vortex-tunnel-sdk'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Andy's Vortex<br>Tunnel" position="3 0.7 10" rotation='0 180 0' visible></a-entity>
-			<!--Pac-Man-->
-				<!--<a-entity position='1 0.2 10' rotation='0 180 0' n-portal='targetSpace: pac-man'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Pac-Man" position="1 0.7 10" rotation='0 180 0' visible></a-entity>
-			<!--Toy House-->
-				<!--<a-entity position='-1 0.2 10' rotation='0 180 0' n-portal='targetSpace: event-862654090620961312'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Ben's<br>Toy House" position="-1 0.7 10" rotation='-1 180 0' visible></a-entity>
-			<!--Ben's Test House-->
-				<!--<a-entity position='-3 0.2 10' rotation='0 180 0' n-portal='targetSpace: test-house'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Ben's<br>Test House" position="-3 0.7 10" rotation='0 180 0' visible></a-entity>
-			<!--Reggie's Octo Space 2-->
-				<!--<a-entity position='-5 0.2 10' rotation='0 180 0' n-portal='targetSpace: experience-space-614783891072352897'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Reggie's Octo<br>Space 2" position="-5 0.7 10" rotation='0 180 0' visible></a-entity>
-			<!--Tanabe's Hub-->
-				<!--<a-entity position='-7 0.2 10' rotation='0 180 0' n-portal='targetSpace: event-684682152100496156'></a-entity>
-				<a-entity n-text="fontSize: 2; text:Tanabe's Hub" position="-7 0.7 10" rotation='0 180 0' visible></a-entity>
-			<!--Uganda-->
-				<!--<a-entity position='0 0.2 63' rotation='0 180 0' n-portal="targetSpace: event-855383141190206287"></a-entity>
-				<a-entity n-text="fontSize: 2; text:Uganda" position="0 0.7 63" rotation='0 180 0' visible></a-entity>
-			
-			<!--Make another boundary box and load event portals-->
-			<!--<a-entity position="10 0.3 6" rotation="0 -90 0" scale="1 1 1" n-layout-browser="url:http://altspacevr.github.io/event-portals-app/;isEnclosure:true;"></a-entity>
-			<a-entity n-text="fontSize: 4; text:Featured Events" position="10 3.4 1" rotation='0 -90 0' visible></a-entity>
 			<!--Ending the scene--> 
 		</a-scene>
+		<!--Load Portals-->
 		<script type="text/javascript">
+			//Public Spaces
+			var public_spaces = document.createElement('a-entity');
+			public_spaces.setAttribute('n-text','fontSize: 4; text:Public Spaces');
+			public_spaces.setAttribute('rotation','0 0 0');
+			public_spaces.setAttribute('position','0 3.4 -10');
+			document.querySelector('a-scene').appendChild(public_spaces);
+			var public = [
+				{name:"Spire 4",space:'event-606878869948990299-848',},
+				{name:"Lobby",space:'lobby'},
+				{name:"Campfire",space:'campfire-lobby'},
+				{name:"Miguel's<br>Party Plaza",space:'explorer-ncb-party-plaza'},
+			]
+			var dp=-3;
+			for (count = 0; count < public.length; count++){
+				var portal_entity = document.createElement('a-entity');
+				var text_entity = document.createElement('a-entity');
+				portal_entity.setAttribute('n-portal','targetSpace:'+public[count].space);
+				portal_entity.setAttribute('rotation','0 0 0');
+				portal_entity.setAttribute('position',dp+' 0.2 -10');
+				text_entity.setAttribute('n-text',"fontSize: 2; text:"+public[count].name);
+				text_entity.setAttribute('rotation','0 0 0');
+				text_entity.setAttribute('position',dp+' 0.7 -10');
+				dp=dp+2;
+				document.querySelector('a-scene').appendChild(portal_entity);
+				document.querySelector('a-scene').appendChild(text_entity);
+			}
+			//Lunar's Spaces
+			var lunar_spaces = document.createElement('a-entity');
+			lunar_spaces.setAttribute('n-text',"fontSize: 4; text:Lunar's Spaces");
+			lunar_spaces.setAttribute('rotation','0 90 0');
+			lunar_spaces.setAttribute('position','-10 3.4 0');
+			document.querySelector('a-scene').appendChild(lunar_spaces);
+			var lunar = [
+				{name:"Unholy HaH",space:'adultier-hah',},
+				{name:"La Hoguera",space:'el-fuego-del-campamento'},
+				{name:"Lunar's<br>Tavern",space:'lunar-s-medieval-tavern'},
+				{name:"Glitchy House",space:'glitchy-house'},
+			]
+			dp=3;
+			for (count = 0; count < lunar.length; count++){
+				var portal_entity = document.createElement('a-entity');
+				var text_entity = document.createElement('a-entity');
+				portal_entity.setAttribute('n-portal','targetSpace:'+lunar[count].space);
+				portal_entity.setAttribute('rotation','0 90 0');
+				portal_entity.setAttribute('position','-10 0.2 '+dp);
+				text_entity.setAttribute('n-text',"fontSize: 2; text:"+lunar[count].name);
+				text_entity.setAttribute('rotation','0 90 0');
+				text_entity.setAttribute('position','-10 0.7 '+dp);
+				dp=dp-2;
+				document.querySelector('a-scene').appendChild(portal_entity);
+				document.querySelector('a-scene').appendChild(text_entity);
+			}
+			//User Spaces
+			var user_spaces = document.createElement('a-entity');
+			user_spaces.setAttribute('n-text','fontSize: 4; text:User Created Spaces');
+			user_spaces.setAttribute('rotation','0 180 0');
+			user_spaces.setAttribute('position','0 3.4 10');
+			document.querySelector('a-scene').appendChild(user_spaces);
+			var user = [
+				{name:"FACEMAN<br>Space Hub",space:'faceman-space-hub',},
+				{name:"Minecraft",space:'altmincraft'},
+				{name:"Andy's Vortex<br>Tunnel",space:'andy-s-vortex-tunnel-sdk'},
+				{name:"Pac-Man",space:'pac-man'},
+				{name:"Ben's<br>Toy House",space:'event-862654090620961312'},
+				{name:"Ben's<br>Test House",space:'test-house'},
+				{name:"Reggie's Octo<br>Space 2",space:'experience-space-614783891072352897'},
+				{name:"Tanabe's Hub",space:'event-684682152100496156'},
+				{name:"Uganda",space:'event-855383141190206287'},
+			]
+			dp=7;
+			for (count = 0; count < user.length; count++){
+				var portal_entity = document.createElement('a-entity');
+				var text_entity = document.createElement('a-entity');
+				portal_entity.setAttribute('n-portal','targetSpace:'+user[count].space);
+				portal_entity.setAttribute('rotation','0 180 0');
+				portal_entity.setAttribute('position',dp+' 0.2 10');
+				text_entity.setAttribute('n-text',"fontSize: 2; text:"+user[count].name);
+				text_entity.setAttribute('rotation','0 190 0');
+				text_entity.setAttribute('position',dp+' 0.7 10');
+				dp=dp-2;
+				document.querySelector('a-scene').appendChild(portal_entity);
+				document.querySelector('a-scene').appendChild(text_entity);
+			}
 			//Pay no attention to the following lines of code
 			//Didn't I just say to pay no attention to this
 			//I should have known an elite haxxor like yourself wouldn't follow directions
@@ -92,65 +129,38 @@
 					var roles = JSON.parse(obj).users[0].roles;
 					if(roles.indexOf('admin') != -1 || roles.indexOf('roadteam') != -1){isAdmin = true;}
 					if(hidden.filter(function(id){return id===user.userId}).length || pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
-						var text_entity = document.createElement('a-entity');
-						text_entity.setAttribute('n-text','fontSize: 15; text:Hidden Portals');
-						text_entity.setAttribute('rotation','0 -90 0');
-						text_entity.setAttribute('position','63 6 0');
-						document.querySelector('a-scene').appendChild(text_entity);
+						var hidden_text_entity = document.createElement('a-entity');
+						hidden_text_entity.setAttribute('n-text','fontSize: 15; text:Hidden Portals');
+						hidden_text_entity.setAttribute('rotation','0 -90 0');
+						hidden_text_entity.setAttribute('position','63 6 0');
+						document.querySelector('a-scene').appendChild(hidden_text_entity);
 					}
 					if(hidden.filter(function(id){return id===user.userId}).length || isAdmin){
-						var portal_entity = document.createElement('a-entity');
-						var text_entity = document.createElement('a-entity');
-						portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
-						portal_entity.setAttribute('rotation','0 -90 0');
-						portal_entity.setAttribute('position','63 0.2 -1');
-						text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
-						text_entity.setAttribute('rotation','0 -90 0');
-						text_entity.setAttribute('position','63 0.7 -1');
-						document.querySelector('a-scene').appendChild(portal_entity);
-						document.querySelector('a-scene').appendChild(text_entity);
+						var hidden_portal_entity = document.createElement('a-entity');
+						var hidden_text_entity = document.createElement('a-entity');
+						hidden_portal_entity.setAttribute('n-portal','targetSpace: new-user-info');
+						hidden_portal_entity.setAttribute('rotation','0 -90 0');
+						hidden_portal_entity.setAttribute('position','63 0.2 -1');
+						hidden_text_entity.setAttribute('n-text','fontSize: 2; text:New User<br>Info');
+						hidden_text_entity.setAttribute('rotation','0 -90 0');
+						hidden_text_entity.setAttribute('position','63 0.7 -1');
+						document.querySelector('a-scene').appendChild(hidden_portal_entity);
+						document.querySelector('a-scene').appendChild(hidden_text_entity);
 					}
 					if(pokesmot.filter(function(id){return id===user.userId}).length || isAdmin){
-						var portal_entity = document.createElement('a-entity');
-						var text_entity = document.createElement('a-entity');
-						portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
-						portal_entity.setAttribute('rotation','0 -90 0');
-						portal_entity.setAttribute('position','63 0.2 1');
-						text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
-						text_entity.setAttribute('rotation','0 -90 0');
-						text_entity.setAttribute('position','63 0.7 1');
-						document.querySelector('a-scene').appendChild(portal_entity);
-						document.querySelector('a-scene').appendChild(text_entity);
+						var hidden_portal_entity = document.createElement('a-entity');
+						var hidden_text_entity = document.createElement('a-entity');
+						hidden_portal_entity.setAttribute('n-portal','targetSpace: capt-cannabis-says-poke-smot');
+						hidden_portal_entity.setAttribute('rotation','0 -90 0');
+						hidden_portal_entity.setAttribute('position','63 0.2 1');
+						hidden_text_entity.setAttribute('n-text',"fontSize: 2; text:Capt. Cannabis's<br>Grow Room");
+						hidden_text_entity.setAttribute('rotation','0 -90 0');
+						hidden_text_entity.setAttribute('position','63 0.7 1');
+						document.querySelector('a-scene').appendChild(hidden_portal_entity);
+						document.querySelector('a-scene').appendChild(hidden_text_entity);
 					}
 				}
 			})
-			var public_spaces = document.createElement('a-entity');
-			public_spaces.setAttribute('n-text','fontSize: 4; text:Public Spaces');
-			public_spaces.setAttribute('rotation','0 0 0');
-			public_spaces.setAttribute('position','0 3.4 -10');
-			document.querySelector('a-scene').appendChild(public_spaces);
-			var public = [
-				{name:"Spire 4",space:'event-606878869948990299-848',},
-				{name:"Lobby",space:'lobby'},
-				{name:"Campfire",space:'campfire-lobby'},
-				{name:"Miguel's<br>Party Plaza",space:'explorer-ncb-party-plaza'},
-			]
-			var x=-3;
-			for (count = 0; count < public.length; count++){
-				var portal_entity = document.createElement('a-entity');
-				var text_entity = document.createElement('a-entity');
-				portal_entity.setAttribute('n-portal','targetSpace:'+public[count].space);
-				portal_entity.setAttribute('rotation','0 0 0');
-				portal_entity.setAttribute('position',x+' 0.2 -10');
-				text_entity.setAttribute('n-text',"fontSize: 2; text:"+public[count].name);
-				text_entity.setAttribute('rotation','0 0 0');
-				text_entity.setAttribute('position',x+' 0.7 -10');
-				x=x+2;
-				document.querySelector('a-scene').appendChild(portal_entity);
-				document.querySelector('a-scene').appendChild(text_entity);
-			}
 		</script>
-	<!--<a-entity position='2 0.2 -10' rotation='0 0 0' n-portal='targetSpace: app-test-playground'></a-entity>
-	<a-entity n-text="fontSize: 2; text:Fae's Playground<br>Desktop Only" position="2 0.7 -10" rotation='0 0 0' visible></a-entity>-->
 	</body>
 </html>
