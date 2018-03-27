@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Master</title>
+		<meta name="Master" content="Master">
+		<!--Calling on aframes JS-->
+		<script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+		<!--Calling on the Altspace SDK js-->
+		<script src="https://sdk.altvr.com/libs/altspace.js/2.6.2/altspace.min.js"></script>
+	</head>
+	<body>
+		<!-- Starting the scene, defining the alignment of the scene to the middle of the boundary box and be a full space app-->
+		<a-scene altspace="verticalAlign: bottom; fullspace: true" vr-mode-ui="enabled: false">
+			<!--Make another boundary box and hub load button-->
+				<a-entity position="0 -50 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;"></a-entity>
+			<!--Make another boundary box and load campfire button-->
+				<a-entity position="0 -50 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/campfireButton/;isEnclosure:false;"></a-entity>
+			<!--Make another boundary box and load badges-->
+				<!--<a-entity n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html?altspace-sync-instance=-L8_WVKDUEQ0I9gZdc-F;isEnclosure:true;"></a-entity>
+			<!--Ending the scene--> 
+		</a-scene>
+	</body>
+</html>
