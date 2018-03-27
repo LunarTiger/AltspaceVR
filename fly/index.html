@@ -102,8 +102,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       function move(i) {
         height += i;
         new TWEEN.Tween(el.position).to({y:height - .5}, 500).start();
-        //htxt = Math.round(height);
-        htxt = height
+        htxt = Math.round(height);
         document.querySelector('#text').setAttribute('n-text', 'text:' + htxt + 'm');
       }
       function reset() {
