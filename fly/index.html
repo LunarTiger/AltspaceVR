@@ -12,7 +12,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 
 
   <head>
-    <meta name="description" content="Lunar's rip of Andys Mod of Ducky's Fly Script">
+    <meta name="description" content="Lunar's mod of Andys Mod of Ducky's Fly Script">
     <title>Duckys Fly - Lunars Rip</title>
     <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
     <script src="https://sdk.altvr.com/libs/altspace.js/2.8.0/altspace.min.js"></script>
@@ -36,31 +36,27 @@ Released under the MIT license: http://jsbin.mit-license.org
  
       <a-assets>
         
-        <img id="resetT" src="/AltspaceVR/fly/reset.jpg">
-        <img id="downT" src="/AltspaceVR/fly/down.jpg">
-        <img id="upT" src="/AltspaceVR/fly/up.jpg">
+        <img id="resetT" src="https://lunartiger.github.io/AltspaceVR/fly/reset.jpg">
+        <img id="downT" src="https://lunartiger.github.io/AltspaceVR/fly/down.jpg">
+        <img id="upT" src="https://lunartiger.github.io/AltspaceVR/fly/up.jpg">
         
       </a-assets>
 
      <a-entity position=" 0 100 0" id="box" n-box-collider="isTrigger:true; type:environment; size: 250 50 250" n-container="capacity:1" wire="on: container-full; emit: trig; targets: #box"></a-entity>
       
-      <a-box id='elevator' material="visible:false" scale='200 1 200' position='0 -5.5 0' n-mesh-collider='type: environment; convex: false'></a-box> <!-- edited out: opacity='0' -->
+      <a-box id='elevator' material="visible:false" scale='2000 1 2000' position='0 -5.5 0' n-mesh-collider='type: environment; convex: false'></a-box> <!-- edited out: opacity='0' -->
       
-      <a-plane id="reset" src='#resetT' position='-1 0.5 -1.61' rotation='-25 0 0' scale='0.15 0.15 0' opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
-      <a-plane id="up" src='#upT' position='-0.6 0.5 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
-      <a-plane id="down" src='#downT' position='-0.8 0.5 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="reset" src='#resetT' position='-1.9 -1 -1.61' rotation='-25 0 0' scale='0.15 0.15 0' opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="up" src='#upT' position='-1.1 0.05 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="down" src='#downT' position='-0.9 0.05 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
       
-    <a-entity id="text" n-text='text:-5m' position='-0.89 0.35 -1.54' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: true"></a-entity>
-      <a-plane color='#472222' position='-0.92 0.35.5 -1.541' rotation="-25 0 0" scale="0.32 0.10 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-entity>
+    <a-entity id="text" n-text='text:-5m' position='-0.89 0.19 -1.54' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
+      <a-plane color='#472222' position='-0.92 0.19.5 -1.541' rotation="-25 0 0" scale="0.32 0.10 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
 
     </a-scene>
     
     <script>
-    altspace.getUser().then(function(user){
-        document.querySelector('#up').setAttribute('position', '-0.6 0.5 -1.61');
-        document.querySelector('#down').setAttribute('position', '-0.8 0.5 -1.61');
-        console.log('you can fly');
-    });
+    console.log('you can fly');
     </script>
       <script>
       var sim = new altspace.utilities.Simulation();
@@ -70,31 +66,30 @@ Released under the MIT license: http://jsbin.mit-license.org
       var pads =[];
       var htxt
        
-      var box = new THREE.Mesh(new THREE.BoxGeometry(1,2,1), new THREE.MeshBasicMaterial({color: 0x6d00aa}));
+      var box = new THREE.Mesh(new THREE.BoxGeometry(1,1,1), new THREE.MeshBasicMaterial({color: 0x000000}));
       box.position.y = 1;
       //sim.scene.add(box);
       new NativeComponent('n-box-collider', {type: 'hologram',size: '0.15 0.15 0.03'}, box).addTo(sim.scene);
-      box.position.set(12,10.5,3);
+      box.position.set(0,3.5,0);
       box.addEventListener('cursorup', function(){
-        console.log('click');
+      	console.log('click');
+      	if(pads[1]!=undefined){
         pads = altspace.getGamepads();
-        console.log("Activated");
-        console.log(pads[1]);
-        console.log(pads[2]);
-        console.log(pads[1].buttons[2].value);
-        console.log(pads[2].buttons[2].value);
-        bp()
+          console.log("Activated");
+          console.log(pads[1]);
+          console.log(pads[2]);
+          console.log(pads[1].buttons[2].value);
+          console.log(pads[2].buttons[2].value);
+          bp()
+        }
+        else{console.log('click denied')}
       });
 
       document.querySelector('#box').addEventListener('trig', function(){
         go()
       });
       
-      document.querySelector('#up').setAttribute('position', '-0.61 0.05 -1.55');
-      document.querySelector('#down').setAttribute('position', '-0.81 0.05 -1.55');
-      
       console.log(pads);
-      
       
       document.querySelector('#up').addEventListener('mousedown', function() {move(1)});
       document.querySelector('#down').addEventListener('mousedown', function() {move(-1)});
@@ -117,42 +112,31 @@ Released under the MIT license: http://jsbin.mit-license.org
       function go() {
         pads = altspace.getGamepads();
         console.log("Activated Aframe");
-        console.log(pads[1]);
-        console.log(pads[2]);
-        console.log(pads[1].buttons[2].value);
-        console.log(pads[2].buttons[2].value);
+        if(pads[1]!=undefined){
+          console.log("Activated Gamepads");
+          console.log(pads[1]);
+          console.log(pads[2]);
+          console.log(pads[1].buttons[2].value);
+          console.log(pads[2].buttons[2].value);
+          }
       }
       loop()
       function loop() {
         TWEEN.update();
         //console.log(pads);
         requestAnimationFrame(loop);
-        if (pads[2].buttons[2].value == 1) {
-          console.log(pads[2].buttons[2].value);
-          move(0.1);
-        }
-        if (pads[1].buttons[2].value == 1) {
-          console.log(pads[2].buttons[2].value);
-          move(-0.1);
+        //console.log("loop before if exception")
+        if(pads[1]!=undefined){
+          if (pads[2].buttons[2].value == 1) {
+            //console.log(pads[2].buttons[2].value);
+            move(0.1);
+          }
+          if (pads[1].buttons[2].value == 1) {
+            //console.log(pads[2].buttons[2].value);
+            move(-0.1);
+          }
         }
       }
     </script>
-
-
-<script src="http://static.jsbin.com/js/render/edit.js?4.1.4"></script>
-<script>jsbinShowEdit && jsbinShowEdit({"static":"http://static.jsbin.com","root":"http://jsbin.com"});</script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-1656750-34', 'auto');
-ga('require', 'linkid', 'linkid.js');
-ga('require', 'displayfeatures');
-ga('send', 'pageview');
-
-</script>
-
 </body>
 </html>
