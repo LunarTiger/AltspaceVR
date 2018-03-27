@@ -51,7 +51,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       <a-plane id="down" src='#downT' position='-1.1 0.05 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
       
     <a-entity id="text" n-text='text:-5m' position='-0.89 0.19 -1.54' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
-      <a-plane color='#472222' position='-0.92 0.19.5 -1.541' rotation="-25 0 0" scale="0.32 0.10 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
+      <a-plane id="tbackground" color='#472222' position='-0.92 0.19.5 -1.541' rotation="-25 0 0" scale="0.32 0.10 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
 
     </a-scene>
     
@@ -65,6 +65,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       altspace.getGamepads();
       var pads =[];
       var htxt
+      var el = document.querySelector('#elevator').object3D;9
        
       var box = new THREE.Mesh(new THREE.BoxGeometry(0.5,0.5,0.5), new THREE.MeshBasicMaterial({color: 0x006900}));
       box.position.y = 1;
@@ -72,6 +73,10 @@ Released under the MIT license: http://jsbin.mit-license.org
       new NativeComponent('n-box-collider', {type: 'hologram',size: '0.15 0.15 0.03'}, box).addTo(sim.scene);
       box.position.set(0,3,0);
       box.addEventListener('cursorup', function(){
+      	document.querySelector('#reset').setAttribute('position', '-1.9 -0.9 -1.61');
+      	document.querySelector('#up').setAttribute('position', '-0.9 0.05 -1.61');
+      	document.querySelector('#down').setAttribute('position', '-1.1 0.05 -1.61');
+      	document.querySelector('#tbackground').setAttribute('position', '-0.92 0.19.5 -1.541');
       	console.log('click');
       	pads = altspace.getGamepads();
       	if(pads[1]!=undefined){
@@ -97,7 +102,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       document.querySelector('#down').addEventListener('mousedown', function() {move(-1)});
       document.querySelector('#reset').addEventListener('mousedown', function() {reset()});
      
-      var el = document.querySelector('#elevator').object3D;
+      //var el = document.querySelector('#elevator').object3D;
       
       function move(i) {
         height += i;
