@@ -71,7 +71,6 @@ Released under the MIT license: http://jsbin.mit-license.org
       box.position.set(0,3,0);
       box.addEventListener('cursorup', function(){
       	reset();
-      	console.log('you can fly');
       	pads = altspace.getGamepads();
       	if(pads[1]!=undefined){
           console.log("Gamepads Activated");
@@ -95,10 +94,9 @@ Released under the MIT license: http://jsbin.mit-license.org
       document.querySelector('#up').addEventListener('mousedown', function() {move(1)});
       document.querySelector('#down').addEventListener('mousedown', function() {move(-1)});
       document.querySelector('#reset').addEventListener('mousedown', function() {reset()});
-     
-      //var el = document.querySelector('#elevator').object3D;
 
       function set(){
+        //console.log('you can fly');
       	document.querySelector('#up').setAttribute('position', '-0.9 0.05 -1.61');
       	document.querySelector('#down').setAttribute('position', '-1.1 0.05 -1.61');
       }
