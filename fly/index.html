@@ -44,7 +44,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 
      <a-entity position=" 0 100 0" id="box" n-box-collider="isTrigger:true; type:environment; size: 250 50 250" n-container="capacity:1" wire="on: container-full; emit: trig; targets: #box"></a-entity>
       
-      <a-box id='elevator' material="visible:false" scale='2000 1 2000' position='0 -550 0' n-mesh-collider='type: environment; convex: false'></a-box> <!-- edited out: opacity='0' -->
+      <a-box id='elevator' material="visible:false" scale='2000 1 2000' position='0 -5000 0' n-mesh-collider='type: environment; convex: false'></a-box> <!-- edited out: opacity='0' -->
       
       <a-plane id="reset" src='https://lunartiger.github.io/AltspaceVR/fly/reset.jpg' position='-1.5 -5000 -1' rotation='-25 45 0' scale='0.15 0.15 0' opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
       <a-plane id="up" src='https://lunartiger.github.io/AltspaceVR/fly/up.jpg' position='-0.9 -5000 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
@@ -55,95 +55,95 @@ Released under the MIT license: http://jsbin.mit-license.org
 
     </a-scene>
 
-      <script>
-      var sim = new altspace.utilities.Simulation();
-      sim.scene.addBehavior(altspace.utilities.behaviors.GamepadControls);
-      var height = -5;
-      altspace.getGamepads();
-      var pads =[];
-      var htxt
-      var el = document.querySelector('#elevator').object3D;
-      var needset = true;
-      document.querySelector('#reset').setAttribute('position', '-1.5 -0.5 -1');
-       
-      var box = new THREE.Mesh(new THREE.BoxGeometry(0.5,0.5,0.5), new THREE.MeshBasicMaterial({color: 0x006900}));
-      box.position.y = 1;
-      //sim.scene.add(box);
-      new NativeComponent('n-box-collider', {type: 'hologram',size: '0.15 0.15 0.03'}, box).addTo(sim.scene);
-      box.position.set(0,3,0);
-      box.addEventListener('cursorup', function(){
-      	reset();
-      	pads = altspace.getGamepads();
-      	if(pads[1]!=undefined){
-          console.log("Gamepads Activated");
-          console.log(pads[1]);
-          console.log(pads[2]);
-          console.log(pads[1].buttons[2].value);
-          console.log(pads[2].buttons[2].value);
-          bp();
+    <script>
+    var sim = new altspace.utilities.Simulation();
+    sim.scene.addBehavior(altspace.utilities.behaviors.GamepadControls);
+    var height = -5;
+    altspace.getGamepads();
+    var pads =[];
+    var htxt
+    var el = document.querySelector('#elevator').object3D;
+    var needset = true;
+
+    var box = new THREE.Mesh(new THREE.BoxGeometry(0.5,0.5,0.5), new THREE.MeshBasicMaterial({color: 0x006900}));
+    box.position.y = 1;
+    //sim.scene.add(box);
+    new NativeComponent('n-box-collider', {type: 'hologram',size: '0.15 0.15 0.03'}, box).addTo(sim.scene);
+    box.position.set(0,3,0);
+    box.addEventListener('cursorup', function(){
+      reset();
+      pads = altspace.getGamepads();
+      if(pads[1]!=undefined){
+        console.log("Gamepads Activated");
+        console.log(pads[1]);
+        console.log(pads[2]);
+        console.log(pads[1].buttons[2].value);
+        console.log(pads[2].buttons[2].value);
+        bp();
+      }
+      else{console.log("You don't have gamepads");}
+      box.position.set(0,-5000,0);
+      console.log('Box is now "invisible"');
+    });
+
+    document.querySelector('#box').addEventListener('trig', function(){
+      go();
+    });
+
+    console.log(pads);
+
+    document.querySelector('#up').addEventListener('mousedown', function() {move(1)});
+    document.querySelector('#down').addEventListener('mousedown', function() {move(-1)});
+    document.querySelector('#reset').addEventListener('mousedown', function() {reset()});
+
+    function set(){
+      console.log('you can fly');
+      document.querySelector('#up').setAttribute('position', '-0.9 0.05 -1.61');
+      document.querySelector('#down').setAttribute('position', '-1.1 0.05 -1.61');
+      document.querySelector('#tbackground').setAttribute('position', '-1.015 0.07 -1.65');
+      needset=false;
+    }
+    function move(i) {
+      height += i;
+      new TWEEN.Tween(el.position).to({y:height - .5}, 500).start();
+      htxt = Math.round(height);
+      document.querySelector('#text').setAttribute('n-text', 'text:' + htxt + 'm');
+    }
+    function reset() {
+      if(needset){set();}
+      height = -5;
+      el.position.y = -5.5;
+      document.querySelector('#text').setAttribute('n-text', 'text: -5m');
+      //console.log(pads);
+    }
+    function go() {
+      pads = altspace.getGamepads();
+      console.log("Activated Aframe");
+      if(pads[1]!=undefined){
+        console.log("Activated Gamepads");
+        console.log(pads[1]);
+        console.log(pads[2]);
+        console.log(pads[1].buttons[2].value);
+        console.log(pads[2].buttons[2].value);
         }
-        else{console.log("You don't have gamepads");}
-        box.position.set(0,-5000,0);
-        console.log('Box is now "invisible"');
-      });
-
-      document.querySelector('#box').addEventListener('trig', function(){
-        go();
-      });
-      
-      console.log(pads);
-      
-      document.querySelector('#up').addEventListener('mousedown', function() {move(1)});
-      document.querySelector('#down').addEventListener('mousedown', function() {move(-1)});
-      document.querySelector('#reset').addEventListener('mousedown', function() {reset()});
-
-      function set(){
-        console.log('you can fly');
-      	document.querySelector('#up').setAttribute('position', '-0.9 0.05 -1.61');
-      	document.querySelector('#down').setAttribute('position', '-1.1 0.05 -1.61');
-      	document.querySelector('#tbackground').setAttribute('position', '-1.015 0.07 -1.65');
-      	needset=false;
-      }
-      function move(i) {
-        height += i;
-        new TWEEN.Tween(el.position).to({y:height - .5}, 500).start();
-        htxt = Math.round(height);
-        document.querySelector('#text').setAttribute('n-text', 'text:' + htxt + 'm');
-      }
-      function reset() {
-        if(needset){set();}
-        height = -5;
-        el.position.y = -5.5;
-        document.querySelector('#text').setAttribute('n-text', 'text: -5m');
-        //console.log(pads);
-      }
-      function go() {
-        pads = altspace.getGamepads();
-        console.log("Activated Aframe");
-        if(pads[1]!=undefined){
-          console.log("Activated Gamepads");
-          console.log(pads[1]);
-          console.log(pads[2]);
-          console.log(pads[1].buttons[2].value);
-          console.log(pads[2].buttons[2].value);
-          }
-      }
-      loop();
-      function loop() {
-        TWEEN.update();
-        //console.log(pads);
-        requestAnimationFrame(loop);
-        if(pads[1]!=undefined){
-          if (pads[2].buttons[2].value == 1) {
-            //console.log(pads[2].buttons[2].value);
-            move(0.1);
-          }
-          if (pads[1].buttons[2].value == 1) {
-            //console.log(pads[2].buttons[2].value);
-            move(-0.1);
-          }
+    }
+    loop();
+    function loop() {
+      TWEEN.update();
+      //console.log(pads);
+      requestAnimationFrame(loop);
+      if(pads[1]!=undefined){
+        if (pads[2].buttons[2].value == 1) {
+          //console.log(pads[2].buttons[2].value);
+          move(0.1);
+        }
+        if (pads[1].buttons[2].value == 1) {
+          //console.log(pads[2].buttons[2].value);
+          move(-0.1);
         }
       }
+    }
+    document.querySelector('#reset').setAttribute('position', '-1.5 -0.5 -1');
     </script>
 </body>
 </html>
