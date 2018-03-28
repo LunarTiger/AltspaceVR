@@ -47,8 +47,8 @@ Released under the MIT license: http://jsbin.mit-license.org
       <a-box id='elevator' material="visible:false" scale='2000 1 2000' position='0 -500.5 0' n-mesh-collider='type: environment; convex: false'></a-box> <!-- edited out: opacity='0' -->
       
       <a-plane id="reset" src='https://lunartiger.github.io/AltspaceVR/fly/reset.jpg' position='-1.5 -0.5 -1' rotation='-25 45 0' scale='0.15 0.15 0' opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
-      <a-plane id="up" src='https://lunartiger.github.io/AltspaceVR/fly/up.jpg' position='-0.9 0.05 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
-      <a-plane id="down" src='https://lunartiger.github.io/AltspaceVR/fly/down.jpg' position='-1.1 0.05 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="up" src='https://lunartiger.github.io/AltspaceVR/fly/up.jpg' position='-0.9 -5000 -1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="down" src='https://lunartiger.github.io/AltspaceVR/fly/down.jpg' position='-1.1 -5000-1.61' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
       
     <a-entity id="text" n-text='text: Click box' position='-0.92 0.19.5 -1.541' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
       <a-plane id="tbackground" color='#472222' position='-0.92 0.195 -1.541' rotation="-25 0 0" scale="0.32 0.10 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
@@ -82,7 +82,7 @@ Released under the MIT license: http://jsbin.mit-license.org
           bp();
         }
         else{console.log("You don't have gamepads");}
-        box.position.set(0,-550,0)
+        box.position.set(0,-5000,0)
         console.log('Box is now "invisible"')
       });
 
@@ -99,10 +99,8 @@ Released under the MIT license: http://jsbin.mit-license.org
       //var el = document.querySelector('#elevator').object3D;
 
       function set(){
-      	document.querySelector('#reset').setAttribute('position', '-1.9 -0.5 -1.61');
       	document.querySelector('#up').setAttribute('position', '-0.9 0.05 -1.61');
       	document.querySelector('#down').setAttribute('position', '-1.1 0.05 -1.61');
-      	reset();
       }
       function move(i) {
         height += i;
@@ -111,6 +109,7 @@ Released under the MIT license: http://jsbin.mit-license.org
         document.querySelector('#text').setAttribute('n-text', 'text:' + htxt + 'm');
       }
       function reset() {
+        set();
         height = -5;
         el.position.y = -5.5;
         document.querySelector('#text').setAttribute('n-text', 'text: -5m');
