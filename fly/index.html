@@ -72,7 +72,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       new NativeComponent('n-box-collider', {type: 'hologram',size: '0.15 0.15 0.03'}, box).addTo(sim.scene);
       box.position.set(0,3,0);
       box.addEventListener('cursorup', function(){
-      	if(needset){set();}
+      	reset();
       	pads = altspace.getGamepads();
       	if(pads[1]!=undefined){
           console.log("Gamepads Activated");
