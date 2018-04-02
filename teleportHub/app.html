@@ -5,7 +5,7 @@
 		 *             Please note, I no longer use this script.             *
 		 *  Instead, I use shane's editor. This code is just an example.     *
 		 *                The scene is avaliable here:                       *
-		 *     http://shanesedit.org/r/Teleport%20Hub_820629041114514394     *
+		 *                 http://shanesedit.org/r/84                        *
 		 *                                                                   *
 		 *********************************************************************/
 	</script>
@@ -64,7 +64,7 @@
 			document.querySelector('a-scene').appendChild(lunar_spaces);
 			var lunar = [
 				{name:"Unholy HaH",space:'adultier-hah',},
-				{name:"La Hoguera",space:'el-fuego-del-campamento'},
+				{name:"La Hoguera",space:'la-hoguera'},
 				{name:"Lunar's<br>Tavern",space:'lunar-s-medieval-tavern'},
 				{name:"Glitchy House",space:'glitchy-house'},
 			]
@@ -90,7 +90,6 @@
 			document.querySelector('a-scene').appendChild(user_spaces);
 			var user = [
 				{name:"FACEMAN<br>Space Hub",space:'faceman-space-hub',},
-				{name:"Minecraft",space:'altmincraft'},
 				{name:"Andy's Vortex<br>Tunnel",space:'andy-s-vortex-tunnel-sdk'},
 				{name:"Pac-Man",space:'pac-man'},
 				{name:"Ben's<br>Toy House",space:'event-862654090620961312'},
@@ -110,6 +109,38 @@
 				text_entity.setAttribute('rotation','0 190 0');
 				text_entity.setAttribute('position',dp+' 0.7 10');
 				dp=dp-2;
+				document.querySelector('a-scene').appendChild(portal_entity);
+				document.querySelector('a-scene').appendChild(text_entity);
+			}
+			//Jacob's Spaces
+			var jacob_spaces = document.createElement('a-entity');
+			user_spaces.setAttribute('n-text','fontSize: 4; text:User Created Spaces');
+			user_spaces.setAttribute('rotation','0 270 0');
+			user_spaces.setAttribute('position','0 3.4 10');
+			document.querySelector('a-scene').appendChild(user_spaces);
+			var user = [
+				{name:"Abstract Spikes",space:'abstract-spikes',},
+				{name:"After Party Room",space:'after-party-event-space'},
+				{name:"Alien Environment",space:'alien-environment'},
+				{name:"Minecraft",space:'altmincraft'},
+				{name:"Paradise Islands:<br>An Altipelago",space:'event-892033901281674085'},
+				{name:"Particles Fun!",space:'particles-fun'},
+				{name:"Psychedelic Fire",space:'psychedelic-fire'},
+				{name:"Tower of Doom",space:'tower-of-doom'},
+				{name:"Waterworld",space:'event-892036419155919809'},
+				{name:"JGI Z18 Artillery Cannon",space:'jgi-z18-artillery-cannon'},
+			]
+			dp=-9;
+			for (count = 0; count < user.length; count++){
+				var portal_entity = document.createElement('a-entity');
+				var text_entity = document.createElement('a-entity');
+				portal_entity.setAttribute('n-portal','targetSpace:'+user[count].space);
+				portal_entity.setAttribute('rotation','0 270 0');
+				portal_entity.setAttribute('position','10 0.2 '+dp);
+				text_entity.setAttribute('n-text',"fontSize: 2; text:"+user[count].name);
+				text_entity.setAttribute('rotation','0 270 0');
+				text_entity.setAttribute('position','10 0.7 '+dp);
+				dp=dp+2;
 				document.querySelector('a-scene').appendChild(portal_entity);
 				document.querySelector('a-scene').appendChild(text_entity);
 			}
