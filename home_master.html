@@ -23,13 +23,15 @@
 			<a-entity position="0 -500 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/campfireButton/;isEnclosure:false;"></a-entity>
 			<!--Make another boundary box and load teleport hub button-->
 			<a-entity position="0 -500 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;"></a-entity>
+			<!--Make another boundary box and load teleport hub button-->
+			<a-entity position="0 -0 0" scale ="6 6" n-layout-browser="url:https://video-jukebox.firebaseapp.com/index.html?categoryUrl=https%3A%2F%2Faccount.altvr.com%2Fapi%2Fpublic%2Fusers%2F820629041114514394%2Fvideo_jukebox_category.json&room=;isEnclosure:false;">
 			<!--Make another boundary box and load event portals-->
 			<!--<a-entity position="6.5 0.4 0" rotation="0 -90 0" n-layout-browser="url:http://altspacevr.github.io/event-portals-app/;isEnclosure:true;"></a-entity>
 			<!--Portal to NUI-->
 			<!--<a-entity position='9.8 0.5 15.8' rotation='0 225 0' n-portal='targetSpace: new-user-info'></a-entity>
 			<a-entity n-text="fontSize: 2; text:New User<br>Info" position="9.8 1 15.8" rotation='0 255 0' visible></a-entity>-->
 		</a-scene>
-		<script type="text/javascript">
+		<!--<script type="text/javascript">
 			altspace.getUser()
 			.then(function(user){
 				if (user.legacyUserId){user.userId = user.legacyUserId;}
@@ -72,6 +74,6 @@
 			})
 			//var sim = new altspace.utilities.Simulation();
 			//altspace.getEnclosure(function(enclosure){sim.scene.scale.set(enclosure.pixelsPerMeter,enclosure.pixelsPerMeter,enclosure.pixelsPerMeter)});
-		</script>
+		</script>-->
 	</body>
 </html>
