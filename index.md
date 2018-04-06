@@ -1,15 +1,15 @@
 <p>
 	<h3>Campfire Master</h3>
 		<ul>
-			<li><a href="https://lunartiger.github.io/AltspaceVR/campfire_master.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/campfire_master.html</a></li>
+			<li><a href="https://lunartiger.github.io/AltspaceVR/hoguera" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/hoguera</a></li>
 			<hr style="height:1px; visibility:hidden;" />
-			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/campfire_master.html">View Source</a></li>
+			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/hoguera/index.html">View Source</a></li>
 			</ul>
 	<h3>Home Master</h3>
 		<ul>
-			<li><a href="https://lunartiger.github.io/AltspaceVR/home_master.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/home_master.html</a></li>
+			<li><a href="https://lunartiger.github.io/AltspaceVR/home" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/home</a></li>
 			<hr style="height:1px; visibility:hidden;" />
-			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/home_master.html">View Source</a></li>
+			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/home/index.html">View Source</a></li>
 		</ul>
 	<a href="https://lunartiger.github.io/AltspaceVR/Redirector/" style="text-decoration:underline; color: black;"><h3>Redirector</h3></a>
 	<a href="https://lunartiger.github.io/AltspaceVR/teleportHub" style="text-decoration:underline; color: black;"><h3>Teleport Hub</h3></a>
