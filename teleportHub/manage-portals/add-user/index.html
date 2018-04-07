@@ -45,6 +45,10 @@
         <label for="password">Password:</label>
         <input type="password" class="form-control" id="password">
     </div>
+    <div class="form-group">
+        <label for="skyColor">Sky Color ( hex Code ):</label>
+        <input type="text" class="form-control" id="skyColor">
+    </div>
     <div class="btn btn-primary" id="addUser">
         Add User
     </div>
@@ -70,18 +74,19 @@
     document.getElementById('addUser').addEventListener('click',function(){
         var data = {
             username:document.getElementById('username').value,
-            password:document.getElementById('password').value,
+            password:document.getElementById('password').value
         };
         socket.emit('md5',data);
         socket.on('md5',function(msg){
-            console.log(msg);
+            var skyColor = document.getElementById('skyColor').value;
             document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4><br>'+msg;
             document.getElementById('saveFormContainer').style.display = 'block';
             document.getElementById('saveUser').addEventListener('click',function(){
                 var data = {
                     username:document.getElementById('myUsername').value,
                     password:document.getElementById('myPassword').value,
-                    user:JSON.parse(msg)
+                    user:JSON.parse(msg),
+                    skyColor:skyColor
                 };
                 
                 socket.emit('add-user',data);

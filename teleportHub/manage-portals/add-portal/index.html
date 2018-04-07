@@ -92,14 +92,6 @@
 <script src="https://shanesedit.org:8008/socket.io/socket.io.js"></script>
 <script type="text/javascript">
     var socket = io.connect('https://shanesedit.org:8008');
-    var portal_hide = document.getElementById('portalMobileHide');
-    var portal_show = document.getElementById('portalMobileOnly');
-    portal_hide.addEventListener('change',function(){
-        portal_show.checked = false;
-    });
-    portal_show.addEventListener('change',function(){
-        portal_hide.checked = false;
-    });
     document.getElementById('addPortal').addEventListener('click',function(){
         var data = {
             username:document.getElementById('username').value,
