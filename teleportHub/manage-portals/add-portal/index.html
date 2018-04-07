@@ -66,6 +66,10 @@
         <input type="text" class="form-control" id="portalBackColor">
     </div>
     <div class="form-group">
+        <label for="skyColor">Sky Color ( hex code ):</label>
+        <input type="text" class="form-control" id="skyColor">
+    </div>
+    <div class="form-group">
         <label for="portalMobileHide">Hide On Mobile:</label>
         <input type="checkbox" class="form-control" id="portalMobileHide">
     </div>
@@ -107,8 +111,9 @@
             portalImage:document.getElementById('portalImage').value,
             rimColor:document.getElementById('portalRimColor').value,
             backColor:document.getElementById('portalBackColor').value,
+            skyColor:document.getElementById('skyColor').value,
             hiddenOnMobile:document.getElementById('portalMobileHide').checked,
-            dizzyNessDisclaimer:document.getElementById('dizzyNessDisclaimer').checked,
+            dizzyNessDisclaimer:document.getElementById('dizzyNessDisclaimer').checked
         };
         socket.emit('add-portal',data);
         document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4>'
