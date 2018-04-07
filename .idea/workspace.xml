@@ -30,8 +30,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teleportHub/manage-portals/add-portal/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="84" column="8" lean-forward="false" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
+            <state relative-caret-position="181">
+              <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -177,12 +177,12 @@
       <workItem from="1521971411397" duration="1280000" />
       <workItem from="1521976957272" duration="5287000" />
       <workItem from="1522010512351" duration="466000" />
-      <workItem from="1523096398365" duration="840000" />
+      <workItem from="1523096398365" duration="1865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7873000" />
+    <option name="totallyTimeSpent" value="8898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -396,8 +396,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/teleportHub/manage-portals/add-portal/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="84" column="8" lean-forward="false" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
+        <state relative-caret-position="181">
+          <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
           <folding />
         </state>
       </provider>

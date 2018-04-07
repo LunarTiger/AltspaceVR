@@ -70,8 +70,8 @@
         <input type="checkbox" class="form-control" id="portalMobileHide">
     </div>
     <div class="form-group">
-        <label for="portalMobileOnly">Only On Mobile:</label>
-        <input type="checkbox" class="form-control" id="portalMobileOnly">
+        <label for="dizzyNessDisclaimer">Include Dizzyness Disclaimer:</label>
+        <input type="checkbox" class="form-control" id="dizzyNessDisclaimer">
     </div>
     <div class="btn btn-primary" id="addPortal">
         Add Portal
@@ -107,7 +107,7 @@
             rimColor:document.getElementById('portalRimColor').value,
             backColor:document.getElementById('portalBackColor').value,
             hiddenOnMobile:document.getElementById('portalMobileHide').checked,
-            onlyOnMobile:document.getElementById('portalMobileOnly').checked,
+            dizzyNessDisclaimer:document.getElementById('dizzyNessDisclaimer').checked,
         };
         socket.emit('add-portal',data);
         document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4>'
