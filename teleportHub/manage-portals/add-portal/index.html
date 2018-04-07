@@ -57,6 +57,22 @@
         <label for="portalImage">Image URL:</label>
         <input type="text" class="form-control" id="portalImage">
     </div>
+    <div class="form-group">
+        <label for="portalRimColor">Portal Rim Color ( hex code ):</label>
+        <input type="text" class="form-control" id="portalRimColor">
+    </div>
+    <div class="form-group">
+        <label for="portalBackColor">Portal Back Color ( hex code ):</label>
+        <input type="text" class="form-control" id="portalBackColor">
+    </div>
+    <div class="form-group">
+        <label for="portalMobileHide">Hide On Mobile:</label>
+        <input type="checkbox" class="form-control" id="portalMobileHide">
+    </div>
+    <div class="form-group">
+        <label for="portalMobileOnly">Only On Mobile:</label>
+        <input type="checkbox" class="form-control" id="portalMobileOnly">
+    </div>
     <div class="btn btn-primary" id="addPortal">
         Add Portal
     </div>
@@ -66,6 +82,14 @@
 <script src="https://shanesedit.org:8008/socket.io/socket.io.js"></script>
 <script type="text/javascript">
     var socket = io.connect('https://shanesedit.org:8008');
+    var portal_hide = document.getElementById('portalMobileHide');
+    var portal_show = document.getElementById('portalMobileOnly');
+    portal_hide.addEventListener('change',function(){
+        portal_show.checked = false;
+    });
+    portal_show.addEventListener('change',function(){
+        portal_hide.checked = false;
+    });
     document.getElementById('addPortal').addEventListener('click',function(){
         var data = {
             username:document.getElementById('username').value,
@@ -73,6 +97,10 @@
             portalName:document.getElementById('portalName').value,
             portalSpaceId:document.getElementById('portalSpaceId').value,
             portalImage:document.getElementById('portalImage').value,
+            rimColor:document.getElementById('portalRimColor').value,
+            backColor:document.getElementById('portalBackColor').value,
+            hiddenOnMobile:document.getElementById('portalMobileHide').checked,
+            onlyOnMobile:document.getElementById('portalMobileOnly').checked,
         };
         socket.emit('add-portal',data);
         document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4>'
