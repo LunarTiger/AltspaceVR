@@ -1,81 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <style>
         body {text-align:center;background-color: #000000;color: #00ff00;}
-        footer {position: fixed;left: 0;bottom: 0;width: 100%;background-color: #000000;color: #00ff00;}
-        button {background-color: #000000;color: #00FF00;padding: 10px;border-radius: 10px;}
-        a:link {color: #00ff00;text-decoration:none;}
-        a:visited {color: #00ff00;text-decoration:none;}
+        a:link {color: #006900;text-decoration:none;}
+        a:visited {color: #006900;text-decoration:none;}
         a:hover {color: #00bf00;text-decoration:none;}
-        a:active {color: #008900;text-decoration:none;}
-        h2 {color: #006900;}
-        h3 {color: #006900;}
-        h6 {color: #00ff00;}
-        table {border: 1px solid #00ff00;margin-left:auto;margin-right:auto;}
-        th {padding: 10px;border: 4px solid #006900;text-align:center}
+        a:active {color: #00bf00;text-decoration:none;}
+        h1 {color: #006900;}
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunar's 2D Teleport Hub</title>
-    <meta name="Lunar's 2D Teleport Hub" content="Lunar's 2D Teleport Hub">
-    <!-- Latest compiled and minified CSS -->
+    <title>Portal Management</title>
+    <meta name="Portal Management" content="Portal Management">
+    <meta http-equiv="refresh" content="0;URL='/althub/manage-portals/remove-portal'" />
 </head>
 <body>
-<a href="https://lunartiger.github.io/AltspaceVR/teleportHub/"><h1>Lunar's Teleport Hub</h1></a>
-<table>
-  <tr>
-      <th style="text-align:center"><a href="https://lunartiger.github.io/AltspaceVR/teleportHub/manage-portals/add-portal/">Add Portal</a></th>
-      <th style="text-align:center"><a href="https://lunartiger.github.io/AltspaceVR/teleportHub/manage-portals/remove-portal/">Remove Portal</a></th>
-      <th style="text-align:center"><a href="https://lunartiger.github.io/AltspaceVR/teleportHub/manage-portals/view-portals/">View Portals</a></th>
-      <th style="text-align:center"><a href="https://lunartiger.github.io/AltspaceVR/teleportHub/manage-portals/add-user/">Add User</a></th>
-  </tr>
-</table>
-<h2 id="submit">Space Submissions</h2>
-<p>You can remove portals already created here.</p>
-
-<div class="container" id="formContainer">
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username">
-    </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password">
-    </div>
-    <div class="form-group">
-        <label for="portalNumber">Portal Number:</label>
-        <input type="text" class="form-control" id="portalNumber">
-    </div>
-    <div class="btn btn-primary" id="removePortal">
-        Remove Portal
-    </div>
-</div>
-
-
-<script src="https://shanesedit.org:8008/socket.io/socket.io.js"></script>
-<script type="text/javascript">
-    var socket = io.connect('https://shanesedit.org:8008');
-    document.getElementById('removePortal').addEventListener('click',function(){
-        var data = {
-            username:document.getElementById('username').value,
-            password:document.getElementById('password').value,
-            portalNumber:document.getElementById('portalNumber').value-1,
-        };
-        socket.emit('remove-portal',data);
-        document.getElementById('formContainer').innerHTML = '<h4>Request Submitted. Thank You!</h4>'
-    })
-</script>
+<h1><a href='/althub/manage-portals/remove-portal'>Click Here</a></h1>
 </body>
-<footer>
-    <table>
-        <tr>
-            <th><a href='#top'>To Top</a></th>
-            <th style='width: 200px;border: 0px;'><p style="font-size:65%;">Last updated: 26/3/2018 1:09 UTC</p></th>
-            <th><a href="https://lunartiger.github.io/">Home</a></th>
-        </tr>
-    </table>
-</footer>
 </html>
