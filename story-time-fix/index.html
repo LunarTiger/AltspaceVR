@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Master</title>
+		<meta name="Master" content="Master">
+		<!--Calling on aframes JS-->
+		<script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
+		<!--Calling on the Altspace SDK js-->
+		<script src="https://sdk.altvr.com/libs/altspace.js/2.6.2/altspace.min.js"></script>
+		<meta http-equiv="refresh" content="10;URL='https://video-jukebox.firebaseapp.com/index.html?categoryUrl=https%3A%2F%2Faccount.altvr.com%2Fapi%2Fpublic%2Fusers%2F820629041114514394%2Fvideo_jukebox_category.json&room='" />
+	</head>
+	<body>
+		<!-- Starting the scene, defining the alignment of the scene to the bottom of the boundary box-->
+		<a-scene altspace='vertical-align: bottom'>
+			<!--Make another boundary box and load teleport hub button-->
+			<a-entity position="0 -10 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;">
+			</a-entity>
+		</a-scene>
+	</body>
+</html>
