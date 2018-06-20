@@ -27,6 +27,7 @@
 	<h3>Fly App</h3>
 		<ul>
 			<li><a href="/AltspaceVR/fly" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/fly</a></li>
+			<hr style="height:1px; visibility:hidden;" />
 			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/fly/index.html">View Source</a></li>
 		</ul>
 </p>
