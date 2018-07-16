@@ -11,7 +11,13 @@
 	</head>
 	<body>
 		<!-- Starting the scene, defining the alignment of the scene to the middle of the boundary box and be a full space app-->
-		<a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">
+		<a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false" sync-system='author: Lunar; app: campfirebadges; refUrl: https://altvr-apps.firebaseio.com/'>
+			<a-assets>
+				<img id='badgeb' src='https://lunartiger.github.io/AltspaceVR/Badge/badge.png'>
+				<a-mixin id='badge' geometry='primitive: circle; radius: .038' material='src: #badgeb; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+				<a-mixin id='ring' geometry='primitive: ring; radius-outer: .04; radius-inner: .038' material='color: #ffbf00; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+				<a-mixin id='modtext' n-text="fontSize: 1; text: <color=black>I'm a mod\nhere" position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+			</a-assets>
 			<!--Make another boundary box and load button-->
 				<a-entity position="0 -50 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;"></a-entity>
 			<!--Make another boundary box and load teleport hub portal-->
@@ -32,5 +38,18 @@
 				<!--<a-entity position="0 -2.7 0" rotation="0 0 0" scale="1 0.2 1" n-layout-browser="url:https://hah.altvr.com/play?gameId=fkSbYiL1uokLRrhY;isEnclosure:true;"></a-entity>
 			<!--Ending the scene--> 
 		</a-scene>
+		<script>
+			var scene = document.querySelector('a-scene');
+			scene.addEventListener('connected', function() {
+				altspace.getUser().then(function(user){
+				//console.log(user);
+					if (user.isModerator){
+						scene.systems['sync-system'].instantiate('badge', scene);
+						scene.systems['sync-system'].instantiate('ring', scene);
+						scene.systems['sync-system'].instantiate('modtext', scene);
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
