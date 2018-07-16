@@ -1,0 +1,203 @@
+<html>
+	<head>
+		<meta name="robots" content="noindex">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			body {text-align:left;background-color: #000000;color: #00ff00;}
+			footer {left: 0;bottom: 0;width: 100%;background-color: #000000;color: #00ff00;border-top: 1px dashed #006900;}
+			button {background-color: #000000;color: #00FF00;padding: 10px;border-radius: 10px;}
+			a:link {color: #00be00;text-decoration:underline;}
+			a:visited {color: #00ff00;text-decoration:underline;}
+			a:hover {color: #00bf00;text-decoration:underline;}
+			a:active {color: #008900;text-decoration:underline;}
+			h1 {color: #00be00;text-align: center;}
+			h2 {color: #00be00;}
+			h3 {color: #00be00;}
+			table {border: 5px solid #006900;margin-left:auto;margin-right:auto;}
+			th {padding: 10px;border: 4px solid #006900;text-align:center}
+			hr {border-top: 1px dashed #006900;border-bottom: 0;border-left: 0;border-right: 0;width: 80%;}
+			p {white-space: pre;}
+			mark {background-color: #006900;color: #fff;}
+		</style>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>AltVR Mods</title>
+		<meta name="AltVR Mods" content="AltVR Mods">
+	</head>
+	<body>
+		<h1 id='top'>How to Modify AltspaceVR</h1>
+		<hr style="width:100%" /><br>
+		<table>
+			<tr>
+				<th><a href=#roles>Add Roles</a></th>
+				<th><a href=#molestopper>Disable Molestoppers</a></th>
+				<th><a href=#pocket>Disable Haptics on Pocket</a></th>
+				<th><a href=#telekinesis>Telekinesis Strength</a></th>
+			</tr>
+			<tr>
+				<th><a href=#objects>Spawn >3 Objects</a></th>
+				<th><a href=#mute>Disable Automute In Spaces</a></th>
+				<th><a href=#buttons>Space Out Fullspace Buttons</a></th>
+				<th><a href=#kinect>Full Body Tracking</a></th>
+			</tr>
+		</table>
+		<br>
+		<h3 id='needed'>What you need:</h3>
+		<p>dnSpy, avaliable for Windows <a href="https://ci.appveyor.com/project/0xd4d/dnspy/branch/master/artifacts">here</a>.</p>
+		<hr />
+		<h3 id='roles'>Add Roles</h3>
+		<p>Go to {}>Role>line 104, edit method, and replace line 19 with the following:</p>
+<p>JsonArray jsonArray = (JsonArray)json["client_abilities"];
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"Flight\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"SpawnPenTool\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"OwnPenTool\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"SpawnLaserPointer\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"OwnLaserPointer\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"EnterFullSpace\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"ToggleEnvironment\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"ToggleNametags\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"SuppressAutoShowFriendRequests\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"MinimizeCockpit\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"RoadTeamControls\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"UseSpacesPanel\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"SpawnDesktop\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"OwnDesktop\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"ExecuteCommands\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"Telekinesis\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"JoinGhosts\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"RoadTeamMessages\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"FreeFloatingBrowser\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"PresenterAudio\", \"arg1\": \"Optional\", \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"ManipulateLockedBrowser\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"AppSelectorModerator\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"ModerateApps\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"IsPresenter\", \"arg1\": null, \"role\": \"default\"}"));
+jsonArray.Add(SimpleJson2.SimpleJson.DeserializeObject("{\"ability\": \"UseNonWhiteListedUrls\", \"arg1\": null, \"role\": \"default\"}"));</p>
+		<hr />
+		<h3 id='molestopper'>Disable Molestoppers</h3>
+		<p>Go to {}>LablesModule>line 50, edit method, set if statment in Enable to <mark>labelBehaviorInfo.RoleExceptions.Count == 0</mark> and the one in Disable to <mark>labelBehaviorInfo.RoleExceptions.Count != 0</mark>, erase last one.</p>
+		<hr />
+		<h3 id='pocket'>Disable Haptics on Pocket</h3>
+		<p>Go to {}>Pocket>line 69, edit method, insert following line after line 12:</p>
+		<p>this.UseHaptics = false;</p>
+		<hr />
+		<h3 id='telekinesis'>Telekinesis Strength</h3>
+		<p>Go to {}>Interactables Tool>line 75, edit method, on line17 change <mark>7f</mark> to <mark>100f</mark></p>
+		<hr />
+		<h3 id='objects'>Spawn >3 Objects</h3>
+		<p>Go to {}>InteractablesManager>loadConfigs, edit method, replace the function with the following:</p>
+<p>private void loadConfigs()
+{
+	JsonObject @object = Feature.GetObject("interactables.configs");
+	string templateSID = Main.SpaceManager.CurrentSpace.TemplateSID;
+	if (@object != null && @object.ContainsKey(templateSID))
+	{
+		JsonObject obj = (JsonObject)@object[templateSID];
+		decimal? number = obj.GetNumber("owned_items_limit");
+			if (number != null)
+			{
+			int? num = (number == null) ? null : new int?((int)number.Value);
+			}
+		this.MaxInteractableItemsOwned = 100;
+		return;
+	}
+	else
+	{
+		int? @int = Feature.GetInt("interactables.default_owned_items_limit");
+		this.MaxInteractableItemsOwned = 100;
+	}
+}</p>
+		<hr />
+		<h3 id='mute'>Disable Automute In Spaces</h3>
+		<p>Go to {}>MicrophoneManager>OnJoinedSpace, edit method, remove first if statment.</p>
+		<hr />
+		<h3 id='buttons'>Space Out Fullspace Buttons</h3>
+		<p>Go to {}>WebBrowser>MoveControlsToCockpit()>line 3, edit method</p>
+<p>private void MoveControlsToCockpit()
+{
+    this.previousControlsScale = new UnityEngine.Vector3?(this.controlsAnchor.transform.localScale);
+    this.previousControlsPosition = this.controlsAnchor.transform.localPosition;
+    this.controlsAnchor.transform.parent = Main.CockpitManager.Cockpit.FullspaceControlsAnchorTransform;
+    this.controlsAnchor.transform.ResetPosRotScale(1f);
+    this.controlsAnchor.transform.localPosition = new UnityEngine.Vector3(0.1f * UnityEngine.Random.Range(1f, 5f), 0f, 0f);
+    this.controlsAnchor.GetComponent&lt;BrowserControlsThickCompositionPositioner&gt;().IsActive = false;
+    this.SdkProfilerUI.transform.SetParent(this.SdkProfilerFullspaceAnchor.transform, false);
+}
+</p>
+		<p>On compiling this will generate errors. Double click the first two errors and erase the methods that are causing the errors and you'll be able to compile.</p>
+		<hr />
+		<h3 id='kinect'>Kinect Full Body Tracking</h3>
+		<p>Go to {}>KinectJointOrientationModule>line 367, edit class</p>
+<p>private Dictionary&lt;JointType, TrackingLocation&gt; kinectJointsToTrackingLocations = new Dictionary&lt;JointType, TrackingLocation&gt;
+	{
+		{
+			JointType.SpineBase,
+			TrackingLocation.Hips
+		},
+		{
+			JointType.SpineShoulder,
+			TrackingLocation.SpineTop
+		},
+		{
+			JointType.Neck,
+			TrackingLocation.Neck
+		},
+		{
+			JointType.Head,
+			TrackingLocation.Head
+		},
+		{
+			JointType.ElbowLeft,
+			TrackingLocation.LeftUpperArm
+		},
+		{
+			JointType.WristLeft,
+			TrackingLocation.LeftLowerArm
+		},
+		{
+			JointType.HandLeft,
+			TrackingLocation.LeftHand
+		},
+		{
+			JointType.ElbowRight,
+			TrackingLocation.RightUpperArm
+		},
+		{
+			JointType.WristRight,
+			TrackingLocation.RightLowerArm
+		},
+		{
+			JointType.HandRight,
+			TrackingLocation.RightHand
+		},
+		{
+			JointType.KneeRight,
+			TrackingLocation.RightUpperLeg
+		},
+		{
+			JointType.AnkleRight,
+			TrackingLocation.RightLowerLeg
+		},
+		{
+			JointType.KneeLeft,
+			TrackingLocation.LeftUpperLeg
+		},
+		{
+			JointType.AnkleLeft,
+			TrackingLocation.LeftLowerLeg
+		},
+		{
+			JointType.FootLeft,
+			TrackingLocation.LeftFoot
+		},
+		{
+			JointType.FootRight,
+			TrackingLocation.RightFoot
+		}
+	};</p>
+		<hr style="height:100px; visibility:hidden;" />
+	</body>
+	<footer>
+		<p style="text-align:center;color:red;"><small>All of these instructions violate the Altspace Terms of Service. Follow these instructions at your own risk.</small></p>
+	</footer>
+</html>
