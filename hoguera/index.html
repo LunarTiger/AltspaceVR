@@ -19,15 +19,11 @@
 				<a-mixin id='modtext' n-text="fontSize: 1; text: <color=black>I'm a mod\nhere" position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
 			</a-assets>
 			<!--Make another boundary box and load button-->
-				<a-entity position="0 -50 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;"></a-entity>
-			<!--Make another boundary box and load teleport hub portal-->
-				<a-entity position="32.5 1 33" rotation="0 180 0" scale="0.1 0.1 0.1" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleport_hub_portal.html;isEnclosure:true;"></a-entity>
+				<a-entity position="0 -10 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;"></a-entity>
 			<!--Make another boundary box and load fly-->
 				<a-entity position="0 0 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/fly/;isEnclosure:true;"></a-entity>
 			<!--Make another boundary box and load redirector-->
 				<!--<a-entity position="4.3 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Redirector/Campfire.html;isEnclosure:true;"></a-entity>
-			<!--Make another boundary box and load Scene-->
-				<!--<a-entity position="0 0 0" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:http://shanesedit.org/;isEnclosure:true;"></a-entity>
 			<!--Make another boundary box and load friend maker 5000-->
 				<!--<a-entity position="4.3 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://altspacevr.github.io/icebreaker-app/;isEnclosure:true;"></a-entity>
 			<!--Make another boundary box and load Video Jukebox-->
@@ -42,7 +38,7 @@
 			var scene = document.querySelector('a-scene');
 			scene.addEventListener('connected', function() {
 				altspace.getUser().then(function(user){
-				//console.log(user);
+				console.log(user);
 					if (user.isModerator){
 						scene.systems['sync-system'].instantiate('badge', scene);
 						scene.systems['sync-system'].instantiate('ring', scene);
