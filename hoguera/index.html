@@ -11,12 +11,25 @@
 	</head>
 	<body>
 		<!-- Starting the scene, defining the alignment of the scene to the middle of the boundary box and be a full space app-->
-		<a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false" sync-system='author: Lunar; app: campfirebadges; refUrl: https://altvr-apps.firebaseio.com/'>
+		<a-scene position='0 0 0' altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false" sync-system='author: Lunar; app: campfirebadges; refUrl: https://altvr-apps.firebaseio.com/'>
 			<a-assets>
+				<!--Badge-->
 				<img id='badgeb' src='https://lunartiger.github.io/AltspaceVR/Badge/badge.png'>
 				<a-mixin id='badge' geometry='primitive: circle; radius: .038' material='src: #badgeb; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
 				<a-mixin id='ring' geometry='primitive: ring; radius-outer: .04; radius-inner: .038' material='color: #ffbf00; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
 				<a-mixin id='modtext' n-text="fontSize: 1; text: <color=black>I'm a mod\nhere" position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
+
+				<!--Crown-->
+				<a-mixin id='crown' position='0 .1 .015' scale='.11 .11 .11' rotation='0 180 0' obj-model='obj: model/crown.obj; mtl: model/crown.mtl' collapse-model></a-mixin>
+				<a-mixin id='s-series-m01' position='0 .1 .015' scale='.11 .11 .11'></a-mixin>
+				<a-mixin id='s-series-f01' position='0 .1 .03' scale='.11 .11 .11'></a-mixin>
+				<a-mixin id='a-series-m01' position='0 .07 .01' scale='.1 .1 .1'></a-mixin>
+				<a-mixin id='x-series-m02' position='0 .11 .05' scale='.1 .1 .1'></a-mixin>
+				<a-mixin id='pod-classic' position='0 .1 .04' scale='.14 .14 .14'></a-mixin>
+				<a-mixin id='robothead-propellerhead-01' position='0 .1 .08' scale='.12 .12 .12'></a-mixin>
+				<a-mixin id='robothead-roundguy-01' position='0 .17 .025' scale='.17 .17 .17'></a-mixin>
+				<a-mixin id='rubenoid' position='0 .11 .04' scale='.14 .14 .14'></a-mixin>
+				<a-mixin id='sync' n-skeleton-parent='part: head' sync sync-n-skeleton-parent></a-mixin>
 			</a-assets>
 			<!--Make another boundary box and load button-->
 				<a-entity position="0 -10 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;"></a-entity>
@@ -40,9 +53,15 @@
 				altspace.getUser().then(function(user){
 				console.log(user);
 					if (user.isModerator){
+						var avatar = user.avatarInfo.sid;
+						var avatars = ['s-series-m01','s-series-f01','a-series-m01','x-series-m02','pod-classic','robothead-propellerhead-01','robothead-roundguy-01'];
+						if (avatars.indexOf(avatar) == -1) {
+							avatar = 'rubenoid';
+						}
 						scene.systems['sync-system'].instantiate('badge', scene);
 						scene.systems['sync-system'].instantiate('ring', scene);
 						scene.systems['sync-system'].instantiate('modtext', scene);
+						scene.systems['sync-system'].instantiate('crown ' + avatar + ' sync', scene);
 					}
 				});
 			});
