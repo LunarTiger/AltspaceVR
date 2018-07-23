@@ -10,7 +10,6 @@
 		<script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
 	</head>
 	<body>
-		<!-- Starting the scene, defining the alignment of the scene to the middle of the boundary box and be a full space app-->
 		<a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false" sync-system='author: Lunar; app: campfirebadges; refUrl: https://altvr-apps.firebaseio.com/'>
 			<a-mixin id='crown' position='0 .1 .015' scale='.11 .11 .11' rotation='0 180 0' obj-model='obj: https://lunartiger.github.io/AltspaceVR/crowns/model/crown.obj; mtl: https://lunartiger.github.io/AltspaceVR/crowns/model/crown.mtl' collapse-model></a-mixin>
 			<a-mixin id='s-series-m01' position='0 .1 .015' scale='.11 .11 .11'></a-mixin>
@@ -28,21 +27,6 @@
 				<a-mixin id='ring' geometry='primitive: ring; radius-outer: .04; radius-inner: .038' material='color: #ffbf00; side: double' position='-.1 .35 -.15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
 				<a-mixin id='modtext' n-text="fontSize: 1; text: <color=black>I'm a mod\nhere" position='-.1 .35 -.151' scale='.15 .15 .15' rotation='0 180 0' n-skeleton-parent='part: spine' sync sync-n-skeleton-parent></a-mixin>
 			</a-assets>
-			<!--Make another boundary box and load button-->
-				<a-entity position="0 -10 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/teleportHub/button/;isEnclosure:false;"></a-entity>
-			<!--Make another boundary box and load fly-->
-				<a-entity position="0 0 0" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/fly/;isEnclosure:true;"></a-entity>
-			<!--Make another boundary box and load redirector-->
-				<!--<a-entity position="4.3 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://lunartiger.github.io/AltspaceVR/Redirector/Campfire.html;isEnclosure:true;"></a-entity>
-			<!--Make another boundary box and load friend maker 5000-->
-				<!--<a-entity position="4.3 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://altspacevr.github.io/icebreaker-app/;isEnclosure:true;"></a-entity>
-			<!--Make another boundary box and load Video Jukebox-->
-				<a-entity position="4.3 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://video-jukebox.firebaseapp.com/index.html?categoryUrl=https%3A%2F%2Faccount.altvr.com%2Fapi%2Fpublic%2Fusers%2F820629041114514394%2Fvideo_jukebox_category.json&room=;isEnclosure:false;"></a-entity>
-			<!--Make another boundary box and load HaH-->
-				<!--<a-entity position="4.3 -1.4 -11.6" rotation="0 0 0" scale="5 5 5" n-layout-browser="url:https://hah.altvr.com/play?gameId=fkSbYiL1uokLRrhY;isEnclosure:true;"></a-entity>
-			<!--Make another boundary box and load tiny HaH-->
-				<!--<a-entity position="0 -2.7 0" rotation="0 0 0" scale="1 0.2 1" n-layout-browser="url:https://hah.altvr.com/play?gameId=fkSbYiL1uokLRrhY;isEnclosure:true;"></a-entity>
-			<!--Ending the scene--> 
 		</a-scene>
 		<script>
 			var scene = document.querySelector('a-scene');
