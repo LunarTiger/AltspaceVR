@@ -6,8 +6,8 @@
 	<script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
 </head>
 <body>
-	<a-scene position='0 0 0' altspace='fullspace: true' sync-system='author: Lunar; app: crowns; refUrl: https://altvr-apps.firebaseio.com/'>
-		<a-mixin id='crown' position='0 .1 .015' scale='.11 .11 .11' rotation='0 180 0' obj-model='obj: model/crown.obj; mtl: model/crown.mtl' collapse-model></a-mixin>
+	<a-scene position='0 0 0' altspace='fullspace: true' sync-system='author: Lunar; app: modCrowns; refUrl: https://altvr-apps.firebaseio.com/'>
+		<a-mixin id='modCrown' position='0 .1 .015' scale='.11 .11 .11' rotation='0 180 0' obj-model='obj: model/crown.obj; mtl: model/crown.mtl' collapse-model></a-mixin>
 
 		<a-mixin id='s-series-m01' position='0 .1 .015' scale='.11 .11 .11'></a-mixin>
 		<a-mixin id='s-series-f01' position='0 .1 .03' scale='.11 .11 .11'></a-mixin>
@@ -30,7 +30,7 @@
 				if (avatars.indexOf(avatar) == -1) {
 					avatar = 'rubenoid';
 				}
-				scene.systems['sync-system'].instantiate('crown ' + avatar + ' sync', scene);
+				scene.systems['sync-system'].instantiate('modCrown ' + avatar + ' sync', scene);
 			}
 		});
 	});
