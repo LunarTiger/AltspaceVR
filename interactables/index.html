@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+window.location = 'https://lunartiger.github.io/AltspaceVR/interactables';
+-->
+<meta name="robots" content="noindex">
+
+<head>
+  <meta name="description" content="interactables array">
+  <title>Interactables</title>
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.js"></script>
+  <script src="https://tweenjs.github.io/tween.js/src/Tween.js"></script>
+  <script src="https://cdn.rawgit.com/oOblik/AltspaceVR-Native-Components-JS/0.1.2/js/JSNativeComponents.js"></script>
+</head>
+<body>
+  <a-scene altspace="fullspace: true" vr-mode-ui="enabled: false">
+
+    <a-entity id="bballr" n-spawner="res:interactables/basketball" scale="0.25 0.25 .25" rotation="0 0 0" n-skeleton-parent="part: hand; side: right; index: 0" position="0 0.01 0.07"></a-entity>
+
+    <a-entity id="bballl" n-spawner="res:interactables/basketball" scale="0.25 0.25 .25" rotation="0 0 0" n-skeleton-parent="part: hand; side: left; index: 0" position="0 0.01 0.07"></a-entity>
+
+    <a-entity id='console' position='0.8 -0.25 -1.55' rotation="0 0 0" scale="1 1 1"  n-cockpit-parent>
+      <a-entity id="menu" position="0 0 0" n-cockpit-parent>
+        <a-plane id="PrevSpawn" src='prev.jpg' position='-0.9 -0.15 0.08' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+        <a-plane id="NextSpawn" src='next.jpg' position='-0.7 -0.15 0.08' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+        
+        <a-entity id="InteractableName" n-text='text: basketball' color='red' position='-0.3 0.05 0' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
+
+        <a-plane id="tbackground" color='green' position='-0.8 -0.19 0.02' rotation="-25 0 0" scale="0.41 0.63 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+
+        <a-plane id="gun" src='gun.jpg' position='-0.9 -0.35 0.16' rotation='-25 0 0' scale='0.15 0.15 0' opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+        <a-entity id="guntext" n-text='text: 00' position='-0.7 -0.35 0.16' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
+
+      </a-entity>
+
+      <a-plane id="minmax" src='minmax.jpg' position='-0.7 0.05 0' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+    </a-entity>
+
+    <a-entity id = spawner n-spawner="res:interactables/basketball" position='0.5 -0.4 -1.55' rotation="-25 0 0" scale="1 1 1" n-cockpit-parent></a-entity>
+
+    <a-entity n-object="res:objects/heatsource-campfire" scale='0.15 0.15 0.15' position="0 0 0" n-skeleton-parent='part:head'></a-entity>
+
+    <a-entity n-object="res:objects/heatsource-campfire" scale='0.015 0.015 0.015' position="-0.011 0 -0.19" n-skeleton-parent='part: hand; side: left; index: 0'></a-entity>
+    <a-entity geometry="primitive: sphere" material="color:red; opacity:0.2" scale='0.015 0.015 0.015' position="-0.011 0 -0.19" n-skeleton-parent='part: hand; side: left; index: 0'></a-entity>
+      
+    <a-entity n-object="res:objects/marshmallow-bag" scale='0.5 0.5 0.5' position="0 0 0" n-skeleton-parent='part:spine'></a-entity>
+
+    <a-entity id="bbgun" n-spawner="res:interactables/basketball" scale='1000 1000 1000' position="0 -5000 0" rotation="90 0 0" n-skeleton-parent='part: hand; side: right; index: 0'></a-entity>
+
+  </a-scene>
+
+  <script>
+    var spawn = 0;
+    var menuup = true;
+    var i = 0;
+    var AllInteractables = [
+    'res:interactables/basketball',
+    'res:interactables/roasting-stick',
+    'res:interactables/roman-candle-1',
+    'res:interactables/bowlingball',
+    'res:interactables/bowling-pin',
+    'res:interactables/box',
+    'res:interactables/coin',
+    'res:interactables/gem',
+    'res:interactables/ring',
+    'res:interactables/soccerball',
+    'res:interactables/burger-patty',
+    'res:interactables/burger-sandwich',
+    'res:interactables/can-beer-king',
+    'res:interactables/can-beer-litaf',
+    'res:interactables/can-beer-millenniale',
+    'res:interactables/can-beer-oface',
+    'res:interactables/can-beer-pegleg',
+    'res:interactables/can-soda-coconut',
+    'res:interactables/can-soda-melon',
+    'res:interactables/pizza-slice',
+    'res:interactables/spatula',
+    'res:interactables/glowstick-green',
+    'res:interactables/glowstick-purple',
+    'res:interactables/glowstick-red',
+    'res:interactables/glowstick-orange',
+    'res:interactables/glowstick-blue',
+    'res:interactables/glowstick-magenta',
+    'res:interactables/pingpong-ball',
+    'res:interactables/red-cup',
+    'res:interactables/flying-disc',
+    'res:interactables/horseshoe-a',
+    'res:interactables/horseshoe-b',
+    'res:interactables/sword',
+    'res:interactables/shield',
+    ];
+    document.querySelector('#PrevSpawn').addEventListener('mousedown', function() {PrevSpawner()});
+    document.querySelector('#NextSpawn').addEventListener('mousedown', function() {NextSpawner()});
+    document.querySelector('#minmax').addEventListener('mousedown', function() {
+      if(menuup == true){
+        document.querySelector('#menu').setAttribute('position', '0 -5000 0');
+        menuup=false;
+        console.log('menuup false');
+      } else {
+        document.querySelector('#menu').setAttribute('position', '0 0 0');
+        menuup=true;
+        console.log('menuup true');
+      }
+    });
+    document.querySelector('#gun').addEventListener('mousedown', function() {
+      document.querySelector('#bbgun').setAttribute('position', '0 0 -5');
+      console.log('Gun Activated');
+      i += 30;
+      gunActive = true;
+    });
+    var gunActive = false;
+    var timer = setInterval(function(){
+      if(i < 1 && gunActive){
+        document.querySelector('#guntext').setAttribute('n-text', 'text: 00');
+        document.querySelector('#bbgun').setAttribute('position', '0 -5000 0');
+        document.querySelector('#guntext').setAttribute('n-text', 'text: 00');
+        console.log('Gun Deativated');
+        gunActive = false;
+      } else if (i >= 1) {
+        document.querySelector('#guntext').setAttribute('n-text', 'text: '+i);
+        i--;
+      }
+    },1000);
+    function PrevSpawner(){
+      spawn--;
+      if(spawn < 0)spawn = AllInteractables.length - 1;
+      document.querySelector('#bballr').setAttribute('n-spawner', AllInteractables[spawn]);
+      document.querySelector('#bballl').setAttribute('n-spawner', AllInteractables[spawn]);
+      document.querySelector('#spawner').setAttribute('n-spawner', AllInteractables[spawn]);
+      document.querySelector('#bbgun').setAttribute('n-spawner', AllInteractables[spawn]);
+      document.querySelector('#InteractableName').setAttribute('n-text', AllInteractables[spawn].replace('res:interactables/','text: '));
+    }
+    function NextSpawner(){
+    spawn++;
+    if(spawn > AllInteractables.length - 1)spawn = 0;
+    document.querySelector('#bballr').setAttribute('n-spawner', AllInteractables[spawn]);
+    document.querySelector('#bballl').setAttribute('n-spawner', AllInteractables[spawn]);
+    document.querySelector('#spawner').setAttribute('n-spawner', AllInteractables[spawn]);
+    document.querySelector('#bbgun').setAttribute('n-spawner', AllInteractables[spawn]);
+    document.querySelector('#InteractableName').setAttribute('n-text', AllInteractables[spawn].replace('res:interactables/','text: '));
+    }
+  </script>
+</body>
+</html>
