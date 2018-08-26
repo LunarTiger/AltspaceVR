@@ -24,20 +24,20 @@ window.location = 'https://lunartiger.github.io/AltspaceVR/interactables';
       <a-entity id="menu" position="0 0 0" n-cockpit-parent>
         <a-plane id="PrevSpawn" src='prev.jpg' position='-0.9 -0.15 0.08' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
         <a-plane id="NextSpawn" src='next.jpg' position='-0.7 -0.15 0.08' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+
+        <a-entity id = spawner n-spawner="res:interactables/basketball" position='-0.3 -0.15 0' rotation="-25 0 0" scale="1 1 1" n-cockpit-parent></a-entity>
         
         <a-entity id="InteractableName" n-text='text: basketball' color='red' position='-0.3 0.05 0' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
 
-        <a-plane id="tbackground" color='green' position='-0.8 -0.19 0.02' rotation="-25 0 0" scale="0.41 0.63 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+        <a-plane id="tbackground" color='green' position='-0.8 -0.055 0.02' rotation="-25 0 0" scale="0.41 0.41 0" opacity='0.3' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
 
-        <a-plane id="gun" src='gun.jpg' position='-0.9 -0.35 0.16' rotation='-25 0 0' scale='0.15 0.15 0' opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
-        <a-entity id="guntext" n-text='text: 00' position='-0.7 -0.35 0.16' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
+        <a-plane id="gun" src='gun.jpg' position='-0.9 0.05 0' rotation='-25 0 0' scale='0.15 0.15 0' opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+        <a-entity id="guntext" n-text='text: 00' position='-0.7 0.05 0' rotation="-25 0 0" scale="0.09 0.09 0" n-cockpit-parent altspace-cursor-collider="enabled: false"></a-entity>
 
       </a-entity>
 
-      <a-plane id="minmax" src='minmax.jpg' position='-0.7 0.05 0' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
+      <a-plane id="minmax" src='minmax.jpg' position='-0.9 -0.35 0.16' rotation="-25 0 0" scale="0.15 0.15 0" opacity='0.5' n-cockpit-parent altspace-cursor-collider="enabled: true"></a-plane>
     </a-entity>
-
-    <a-entity id = spawner n-spawner="res:interactables/basketball" position='0.5 -0.4 -1.55' rotation="-25 0 0" scale="1 1 1" n-cockpit-parent></a-entity>
 
     <a-entity n-object="res:objects/heatsource-campfire" scale='0.15 0.15 0.15' position="0 0 0" n-skeleton-parent='part:head'></a-entity>
 
