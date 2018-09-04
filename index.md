@@ -30,4 +30,10 @@
 			<hr style="height:1px; visibility:hidden;" />
 			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/fly/index.html">View Source</a></li>
 		</ul>
+	<h3>Interactables App</h3>
+		<ul>
+			<li><a href="/AltspaceVR/interactables" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/interactables</a></li>
+			<hr style="height:1px; visibility:hidden;" />
+			<li><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/interactables/index.html">View Source</a></li>
+		</ul>
 </p>
