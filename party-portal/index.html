@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Pay No Attention To This And Go To The Teleport Hub NOW</title>
-    <meta name="Pay No Attention To This And Go To The Teleport Hub NOW" content="Pay No Attention To This And Go To The Teleport Hub NOW">
+    <title>Pay No Attention To This And Go NOW</title>
+    <meta name="Pay No Attention To This And Go NOW" content="Pay No Attention To This And Go NOW">
     <!--Calling on aframes JS-->
     <script src="https://aframe.io/releases/0.3.0/aframe.js"></script>
     <!--Calling on the Altspace SDK js-->
@@ -12,8 +12,22 @@
   <body>
     <!-- Starting the scene, defining the space to be a fullspace app-->
     <a-scene altspace="verticalAlign: middle; fullspace: true" vr-mode-ui="enabled: false">
-      <a-entity position='0 -250 0' rotation='0 0 0' scale = '500 500 500' n-portal='targetSpace: lunar-s-teleport-hub'></a-entity>
-      <a-entity position='0 -250 0' rotation='0 180 0' scale = '500 500 500' n-portal='targetSpace: lunar-s-teleport-hub'></a-entity>
     </a-scene>
+    <script>
+      var room = window.location.hash;
+      room = room.substr(1)
+      var portal_1 = document.createElement('a-entity');
+      var portal_2 = document.createElement('a-entity');
+      portal_1.setAttribute('n-portal','targetSpace:'+room);
+      portal_1.setAttribute('rotation','0 0 0');
+      portal_1.setAttribute('position','0 -250 0');
+      portal_1.setAttribute('scale','500 500 500');
+      portal_2.setAttribute('n-portal','targetSpace:'+room);
+      portal_2.setAttribute('rotation','0 180 0');
+      portal_2.setAttribute('position','0 -250 0');
+      portal_2.setAttribute('scale','500 500 500');
+      document.querySelector('a-scene').appendChild(portal_1);
+      document.querySelector('a-scene').appendChild(portal_2);
+    </script>
   </body>
 </html>
