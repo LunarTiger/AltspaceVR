@@ -6,7 +6,7 @@
     src: url(/comic.ttf);
 }
 
-@import "{{ site.theme }}";
+/* @import "{{ site.theme }}"; */
 
 body {
     font-family: ComicSans;
@@ -80,11 +80,18 @@ h6 {
     color: #00ff00;
 }
 
-hr {
+hr { 
     border-top: 1px dashed #006900;
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inline;
+    border-width: 1px;
 }
 
 table {
@@ -137,7 +144,7 @@ ul.navbar {
 /* navbar */
 li.navbar {
     border-right: 1px dashed #006900;
-    float: left;
+    display: inline-block;
 }
 
 li.navbar:last-child {

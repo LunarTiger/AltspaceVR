@@ -1,50 +1,63 @@
-<!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<!DOCTYPE html>
+<html lang="en-US">
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
 {% seo %}
-
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <a href="{{ site.github.url }}"> <h1>{{ site.title | default: site.github.repository_name }}</h1> </a>
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-        <br />
-        <p style="font-size:20px"><a href="https://lunartiger.github.io/">Home</a></p>
-      </header>
-      <section>
+
+    <header>
+      <div class="container">
+        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        <hr />
+        <nav>
+          <ul class="navbar">
+            <li class="navbar"><a href="{{ site.github.url }}">Home</a></li>
+            <li class="navbar"><a href="{{ site.github.url }}/Redirector">Redirector</a></li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/campfire">Campfire</a></li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/home"></a>Home</li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/fly"></a>Fly</li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/int">Interactables</a></li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/tphub">Teleport Hub</a></li>
+          </ul>
+        </nav>
+        <hr />
+
+        <!--<section id="downloads">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+          {% endif %}
+        </section>-->
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content" style="text-align:center">
 
       {{ content }}
 
       </section>
       <footer>
-        {% if site.github.is_project_page %}
-        <p>This project is maintained by <a href="https://lunartiger.github.io">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Hosted on GitHub Pages</small></p>
+        <p>This project is maintained by <a href="/">LunarTiger</a></p>
       </footer>
     </div>
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
 
-
-  {% if site.google_analytics %}
-    <script>
+<!--    {% if site.google_analytics %}
+      <script type="text/javascript">
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         ga('create', '{{ site.google_analytics }}', 'auto');
         ga('send', 'pageview');
-    </script>
-  {% endif %}
+      </script>
+    {% endif %}
+-->
   </body>
 </html>
