@@ -15,7 +15,7 @@
 <br>
 <hr />
 <h3>Campfire Button</h3>
-<p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVRcampfireButton</a></p>
+<p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton</a></p>
 <br>
 <p>Source code:</p>
 <div id='rawfile1' style="border: 0;max-width:100%;max-height:95%;height:500px;width:705px;display: inline-block;">
