@@ -18,7 +18,7 @@
 <p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVRcampfireButton</a></p>
 <br>
 <p>Source code:</p>
-<div id='rawfile1' style="border: 0;max-width:100%;max-height:95%;height:900px;width:705px;display: inline-block;">
+<div id='rawfile1' style="border: 0;max-width:100%;max-height:95%;height:500px;width:705px;display: inline-block;">
 	<pre id="thePre1" style="text-align:left; background:transparent; color: green;max-width:100%;max-height:100%;height:900px;width:705px;border: 4px solid #006900;margin: auto;overflow: scroll;display: block;"></pre>
 </div>
 <script>
@@ -32,7 +32,7 @@
 <p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton/popup.html" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton/popup.html</a></p>
 <br>
 <p>Source code:</p>
-<div id='rawfile2' style="border: 0;max-width:100%;max-height:95%;height:900px;width:705px;display: inline-block;">
+<div id='rawfile2' style="border: 0;max-width:100%;max-height:95%;height:500px;width:705px;display: inline-block;">
 	<pre id="thePre2" style="text-align:left; background:transparent; color: green;max-width:100%;max-height:100%;height:900px;width:705px;border: 4px solid #006900;margin: auto;overflow: scroll;display: block;"></pre>
 </div>
 <script>
