@@ -1,4 +1,4 @@
-<h2>Redirector Index</h2>
+<h2>Redirector</h2>
 <h3>Campfire Redirector</h3>
 <p><a href="https://lunartiger.github.io/AltspaceVR/Redirector/Campfire.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/Redirector/Campfire.html</a></p>
 <br>

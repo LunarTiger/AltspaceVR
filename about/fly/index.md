@@ -1,4 +1,4 @@
-<h3>Fly App</h3>
+<h2>Fly App</h2>
 <p><a href="/AltspaceVR/fly" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/fly</a></p>
 <br>
 <p>Source code:</p>

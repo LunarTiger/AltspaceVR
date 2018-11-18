@@ -1,4 +1,4 @@
-<h3>Home Master</h3>
+<h2>Home Master</h2>
 <p><a href="https://lunartiger.github.io/AltspaceVR/home" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/home</a></p>
 <br>
 <p>Source code:</p>

@@ -1,5 +1,5 @@
-<h3>Interactables App</h3>
-<li><a href="/AltspaceVR/interactables" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/interactables</a></li>
+<h2>Interactables App</h2>
+<p><a href="/AltspaceVR/interactables" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/interactables</a></p>
 <br>
 <p>Source code:</p>
 <div id='rawfile' style="border: 0;max-width:100%;max-height:95%;height:900px;width:705px;display: inline-block;">
