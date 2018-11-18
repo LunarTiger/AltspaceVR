@@ -49,6 +49,7 @@
 		document.getElementById('thePre2').innerText = body;
 	})
 </script>
+<hr style="width:55%">
 <p><a href="https://lunartiger.github.io/AltspaceVR/teleportHub/button/popup.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/teleportHub/button/popup.html</a></p>
 <br>
 <p>Source code:</p>
