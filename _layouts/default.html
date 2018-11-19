@@ -13,12 +13,14 @@
 
     <header>
       <div class="container">
-        <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        <h1><a href="{{ site.github.url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         <hr />
         <nav>
           <ul class="navbar">
-            <li class="navbar"><a href="{{ site.github.url }}">Home</a></li>
             <li class="navbar"><a href="{{ site.github.url }}/Redirector">Redirector</a></li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/portal">Party Portal</a></li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/badge">Badges</a></li>
+            <li class="navbar"><a href="{{ site.github.url }}/about/crown">Crowns</a></li>
             <li class="navbar"><a href="{{ site.github.url }}/about/campfire">Campfire</a></li>
             <li class="navbar"><a href="{{ site.github.url }}/about/home">Home</a></li>
             <li class="navbar"><a href="{{ site.github.url }}/about/fly">Fly</a></li>
