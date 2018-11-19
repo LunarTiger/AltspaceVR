@@ -13,7 +13,7 @@
 		document.getElementById('thePre1').innerText = body;
 	})
 </script>
-<hr style="width:55%">
+<hr />
 <h3>Home Redirector</h3>
 <p><a href="https://lunartiger.github.io/AltspaceVR/Redirector/Home.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/Redirector/Home.html</a></p>
 <br>
@@ -28,7 +28,7 @@
 		document.getElementById('thePre2').innerText = body;
 	})
 </script>
-<hr style="width:55%">
+<hr />
 <h3>Tavern Redirector</h3>
 <br>
 <p>Source code:</p>
