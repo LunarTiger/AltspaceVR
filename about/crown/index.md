@@ -1,5 +1,6 @@
 <h2>Crowns</h2>
 <h3>Crowns for All</h3>
+<p>Attaches crowns to everyone.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/crowns/everyone.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/crowns/everyone.html</a></p>
 <br>
 <p>Source code:</p>
@@ -17,6 +18,7 @@
 <hr />
 <br>
 <h3>Crown Mods</h3>
+<p>Attaches crowns to moderators.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/crowns" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/crowns</a></p>
 <br>
 <p>Source code:</p>

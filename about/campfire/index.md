@@ -1,5 +1,6 @@
 <h2>Campfire</h2>
 <h3>Campfire Master</h3>
+<p>I use this in my campfire.<br>All it does is load other enclosures and give moderators crowns and badges.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/hoguera" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/hoguera</a></p>
 <br>
 <p>Source code:</p>
@@ -16,6 +17,7 @@
 <br>
 <hr />
 <h3>Campfire Button</h3>
+<p>This adds and additional button to the rotary menu that takes people to the campfire when clicked.</p>
 <p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton</a></p>
 <br>
 <p>Source code:</p>

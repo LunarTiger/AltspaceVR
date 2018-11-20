@@ -1,4 +1,5 @@
 <h2>Interactables App</h2>
+<p>Adds an interactable spawner to the hud.<br>Interactables can be changed with next/back arrows.<br>Interactable avaliability is dependant on the space.</p>
 <p><a href="/AltspaceVR/interactables" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/interactables</a></p>
 <br>
 <p>Source code:</p>

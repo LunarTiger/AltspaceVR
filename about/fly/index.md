@@ -1,5 +1,6 @@
 <h2>Fly App</h2>
 <h3>New</h3>
+<p>A newer fly app that also has interactables.</p>
 <p><a href="/AltspaceVR/fly/new" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/fly/new</a></p>
 <br>
 <p>Source code:</p>
@@ -16,6 +17,7 @@
 <br>
 <hr />
 <h3>Old</h3>
+<p>An older version of the fly app.</p>
 <p><a href="/AltspaceVR/fly" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/fly</a></p>
 <br>
 <p>Source code:</p>

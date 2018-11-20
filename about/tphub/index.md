@@ -20,6 +20,7 @@
 <hr />
 <br>
 <h3>Portal to the Teleport Hub</h3>
+<p>Adds a portal to my teleport hub</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/teleport_hub_portal.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/teleport_hub_portal.html</a></p>
 <br>
 <p>Source code:</p>
@@ -37,6 +38,7 @@
 <hr />
 <br>
 <h3>Teleport Hub Button</h3>
+<p>This adds and additional button to the rotary menu that takes people to my teleport hub when clicked</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/teleportHub/button/index.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/teleportHub/button/index.html</a></p>
 <br>
 <p>Source code:</p>

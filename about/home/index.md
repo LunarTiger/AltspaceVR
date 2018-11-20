@@ -1,4 +1,5 @@
 <h2>Home Master</h2>
+<p>I used this in my home.<br>All it does is load other enclosures and add a portal to the NUI.<br>Commented out script no longer works.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/home" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/home</a></p>
 <br>
 <p>Source code:</p>

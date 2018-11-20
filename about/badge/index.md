@@ -1,5 +1,6 @@
 <h2>Badges</h2>
 <h3>Badges by Ben</h3>
+<p>A badges app that was made by Ben that I stole and modified.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html</a></p>
 <br>
 <p>Source code:</p>
@@ -17,6 +18,7 @@
 <hr />
 <br>
 <h3>Mod Badges</h3>
+<p>Adds badges to moderators indicating that they're moderators.</p>
 <p><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/mod" style="text-decoration:none">https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/mod</a></p>
 <br>
 <p>Source code:</p>
