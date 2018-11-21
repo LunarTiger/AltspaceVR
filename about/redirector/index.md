@@ -1,5 +1,7 @@
 <h2>Redirector</h2>
+<br>
 <h3>Campfire Redirector</h3>
+<p>Provides links to apps that can be clicked on by people who have the necessary permissions.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/Redirector/Campfire.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/Redirector/Campfire.html</a></p>
 <br>
 <p>Source code:</p>
@@ -15,6 +17,7 @@
 </script>
 <hr />
 <h3>Home Redirector</h3>
+<p>Provides links to apps that can be clicked on by people who have the necessary permissions.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/Redirector/Home.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/Redirector/Home.html</a></p>
 <br>
 <p>Source code:</p>
@@ -30,7 +33,7 @@
 </script>
 <hr />
 <h3>Tavern Redirector</h3>
-<br>
+<p>Provides links to apps that can be clicked on by people who have the necessary permissions.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/Redirector/Tavern.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/Redirector/Tavern.html</a></p>
 <br>
 <p>Source code:</p>
