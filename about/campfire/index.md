@@ -18,7 +18,7 @@
 <hr />
 <h3>Campfire Button</h3>
 <p>This adds and additional button to the rotary menu that takes people to the campfire when clicked.</p>
-<p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton</a></p>
+<p><a href="https://lunartiger.github.io/AltspaceVR/campfireButton" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/campfireButton</a></p>
 <br>
 <p>Source code:</p>
 <div id='rawfile1' style="border: 0;max-width:100%;max-height:95%;height:500px;width:705px;display: inline-block;">
@@ -32,7 +32,7 @@
 	})
 </script>
 <hr style="width:55%">
-<p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton/popup.html" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVR/campfireButton/popup.html</a></p>
+<p><a href="https://lunartiger.github.io/AltspaceVR/campfireButton/popup.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/campfireButton/popup.html</a></p>
 <br>
 <p>Source code:</p>
 <div id='rawfile2' style="border: 0;max-width:100%;max-height:95%;height:500px;width:705px;display: inline-block;">

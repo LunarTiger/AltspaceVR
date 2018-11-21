@@ -1,6 +1,6 @@
 <h2>Party Potyal</h2>
 <p>This lets you pass in the space-id as a hash in the url.</p>
-<p><a href="https://lunartiger.github.io/LunarTiger/AltspaceVR/party-portal" style="text-decoration:none">https://lunartiger.github.io/LunarTiger/AltspaceVR/party-portal</a></p>
+<p><a href="https://lunartiger.github.io/AltspaceVR/party-portal" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/party-portal</a></p>
 <br>
 <p>Source code:</p>
 <div id='rawfile' style="border: 0;max-width:100%;max-height:95%;height:500px;width:705px;display: inline-block;">
