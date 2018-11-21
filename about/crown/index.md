@@ -1,4 +1,5 @@
 <h2>Crowns</h2>
+<br>
 <h3>Crowns for All</h3>
 <p>Attaches crowns to everyone.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/crowns/everyone.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/crowns/everyone.html</a></p>

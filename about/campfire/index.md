@@ -1,4 +1,5 @@
 <h2>Campfire</h2>
+<br>
 <h3>Campfire Master</h3>
 <p>I use this in my campfire.<br>All it does is load other enclosures and give moderators crowns and badges.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/hoguera" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/hoguera</a></p>

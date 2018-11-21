@@ -1,4 +1,5 @@
 <h2>Badges</h2>
+<br>
 <h3>Badges by Ben</h3>
 <p>A badges app that was made by Ben that I stole and modified.</p>
 <p><a href="https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/Badge/Badges_by_Ben.html</a></p>
