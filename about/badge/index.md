@@ -19,7 +19,7 @@
 <br>
 <h3>Mod Badges</h3>
 <p>Adds badges to moderators indicating that they're moderators.</p>
-<p><a href="https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/mod" style="text-decoration:none">https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/mod</a></p>
+<p><a href="https://lunartiger.github.io/AltspaceVR/master/Badge/mod" style="text-decoration:none">https://lunartiger.github.io/AltspaceVR/master/Badge/mod</a></p>
 <br>
 <p>Source code:</p>
 <div id='rawfile1' style="border: 0;max-width:100%;max-height:95%;height:500px;width:705px;display: inline-block;">
