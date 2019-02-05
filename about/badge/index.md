@@ -11,11 +11,9 @@
 	</div>
 </div>
 <script>
-	fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/Badges_by_Ben.html')
-	.then(body=>body.text())
-	.then(body=>{
-		document.getElementById('thePre0').innerText = body;
-	})
+fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/Badges_by_Ben.html')
+.then(body=>body.text())
+.then(body=>{document.getElementById('thePre0').innerText = body;})
 </script>
 <button class="collapsible" id="mod" data-parent="mod" data-child="mod-child">Mod Badges</button>
 <div id="mod-child" class="innertext" data-parent="mod">
@@ -28,10 +26,8 @@
 	</div>
 </div>
 <script>
-	fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/mod/index.html')
-	.then(body=>body.text())
-	.then(body=>{
-		document.getElementById('thePre1').innerText = body;
-	})
+fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/Badge/mod/index.html')
+.then(body=>body.text())
+.then(body=>{document.getElementById('thePre1').innerText = body;})
 </script>
 <hr style="height:50px; visibility:hidden;" />

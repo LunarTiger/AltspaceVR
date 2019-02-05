@@ -8,9 +8,7 @@
 </div>
 <hr style="height:50px; visibility:hidden;" />
 <script>
-	fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/interactables/index.html')
-	.then(body=>body.text())
-	.then(body=>{
-		document.getElementById('thePre').innerText = body;
-	})
+fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/interactables/index.html')
+.then(body=>body.text())
+.then(body=>{document.getElementById('thePre').innerText = body;})
 </script>

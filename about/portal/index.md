@@ -7,10 +7,8 @@
 	<pre id="thePre" style="text-align:left; background:transparent; color: green;max-width:100%;max-height:100%;height:900px;width:705px;border: 4px solid #006900;margin: auto;overflow: scroll;display: block;"></pre>
 </div>
 <script>
-	fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/party-portal/index.html')
-	.then(body=>body.text())
-	.then(body=>{
-		document.getElementById('thePre').innerText = body;
-	})
+fetch('https://raw.githubusercontent.com/LunarTiger/AltspaceVR/master/party-portal/index.html')
+.then(body=>body.text())
+.then(body=>{document.getElementById('thePre').innerText = body;})
 </script>
 <hr style="height:50px; visibility:hidden;" />
